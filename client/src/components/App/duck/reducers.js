@@ -149,7 +149,7 @@ const correctGuess = (state, action) => {
       attempts
     },
     guesses: [...state.guesses, {
-      round: state.guessMeta.roundIdx,
+      roundIdx: state.guessMeta.roundIdx,
       specie: action.value,
       result: GUESS_STATES.CORRECT
     }],
@@ -167,7 +167,7 @@ const incorrectGuess = (state, action) => {
       attempts
     },
     guesses: [...state.guesses, {
-      round: state.guessMeta.roundIdx,
+      roundIdx: state.guessMeta.roundIdx,
       specie: action.value,
       result: GUESS_STATES.INCORRECT
     }]

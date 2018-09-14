@@ -21,19 +21,31 @@ const getGuessState = state => {
   return getGuessMeta(state).latestGuess
 }
 
-/*
 const getRounds = state => appSelectors.getApp(state).rounds
 
 const getLastRound = state => {
   const rounds = getRounds(state)
   return (rounds.length > 0) && [...rounds].pop()
 }
-*/
+
+const getLastRoundHasSuccess = state => {
+  const lastRound = getLastRound(state)
+  return lastRound && getLastRound(state).success
+}
+
+const getRoundHasAnyGuess = state => {
+  const rounds = getRounds(state)
+  const lastGuess = getLastGuess(state)
+  console.log(777, lastGuess, lastGuess && lastGuess.roundIdx === (rounds.length - 1))
+  return lastGuess && lastGuess.roundIdx === (rounds.length - 1)
+}
 
 export default {
   getRecordings,
   getRandomRecording,
   getRandomSpecieData,
   getGuessState,
-  getLastGuess
+  getLastGuess,
+  getLastRoundHasSuccess,
+  getRoundHasAnyGuess
 }

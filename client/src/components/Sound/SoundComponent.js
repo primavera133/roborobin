@@ -3,8 +3,9 @@ import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types'
 import SpeciesList from '../SpeciesList/SpeciesList'
 import GuessInfo from '../GuessInfo/GuessInfo'
+import NewRound from '../NewRound/NewRound'
 
-const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editList, makeAGuess, lastGuess }) => {
+const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
   return (
     <div className='Sound'>
       <h4>Guess the specie</h4>
@@ -17,9 +18,11 @@ const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editL
       />
       )}
 
-      <SpeciesList species={species} makeAGuess={makeAGuess} lastGuess={lastGuess} />
+      <SpeciesList species={species} makeAGuess={makeAGuess} lastGuess={lastGuess} roundHasAnyGuess={roundHasAnyGuess} />
 
-      <GuessInfo lastGuess={lastGuess} url={url} randomSpecieData={randomSpecieData} randomRecording={randomRecording} />
+      {roundHasAnyGuess && <GuessInfo lastGuess={lastGuess} url={url} randomSpecieData={randomSpecieData} randomRecording={randomRecording} />}
+
+      <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
 
       <button onClick={editList}>Edit list</button>
     </div>
