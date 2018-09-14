@@ -6,7 +6,7 @@ import { setupCreators, setupSelectors } from '../Setup/duck'
 
 class SoundContainer extends Component {
   componentDidMount () {
-    this.props.playRandomRecording()
+    this.props.startNewRound()
   }
 
   render () {
@@ -30,12 +30,12 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  const playRandomRecording = () => dispatch(soundOperations.selectRandomSpecie())
+  const startNewRound = () => dispatch(soundOperations.startNewRound())
   const makeAGuess = specie => dispatch(soundOperations.makeAGuess(specie))
   const editList = () => dispatch(setupCreators.editList())
 
   return {
-    playRandomRecording,
+    startNewRound,
     makeAGuess,
     editList
   }

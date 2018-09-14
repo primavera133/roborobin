@@ -6,8 +6,12 @@ const getRandomSpecieData = (state) => appSelectors.getApp(state).randomSpecieDa
 
 const getRandomRecording = (state) => appSelectors.getApp(state).randomRecording
 
+const getGuessMeta = state => {
+  return appSelectors.getApp(state).guessMeta
+}
+
 const getGuessState = state => {
-  return appSelectors.getApp(state).guess
+  return getGuessMeta(state).latestGuess
 }
 
 export default {

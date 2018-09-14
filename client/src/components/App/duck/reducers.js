@@ -68,7 +68,10 @@ const playRecording = (state, action) => {
     ...state,
     showSetup: false,
     playRecording: true,
-    guess: GUESS_STATES.THINKING
+    guessMeta: {
+      latestGuess: GUESS_STATES.THINKING,
+      attempts: 0
+    }
   }
 }
 
@@ -120,17 +123,51 @@ const setRandomRecording = (state, action) => {
   }
 }
 
-const correctGuess = (state, action) => {
+const addRound = (state, action) => {
+  const rounds = [...state.rounds, action.value]
   return {
     ...state,
-    guess: GUESS_STATES.CORRECT
+    guessMeta: {
+      roundIdx: (rounds.length - 1)
+    },
+    rounds
+  }
+}
+
+const correctGuess = (state, action) => {
+  const attempts = state.guessMeta.attempts + 1
+  const rounds = [...state.rounds]
+  rounds[rounds.length - 1].success = true
+  return {
+    ...state,
+    guessMeta: {
+      ...state.guessMeta,
+      latestGuess: GUESS_STATES.CORRECT,
+      attempts
+    },
+    guesses: [...state.guesses, {
+      round: state.guessMeta.roundIdx,
+      specie: action.value,
+      result: GUESS_STATES.CORRECT
+    }],
+    rounds
   }
 }
 
 const incorrectGuess = (state, action) => {
+  const attempts = state.guessMeta.attempts + 1
   return {
     ...state,
-    guess: GUESS_STATES.INCORRECT
+    guessMeta: {
+      ...state.guessMeta,
+      latestGuess: GUESS_STATES.INCORRECT,
+      attempts
+    },
+    guesses: [...state.guesses, {
+      round: state.guessMeta.roundIdx,
+      specie: action.value,
+      result: GUESS_STATES.INCORRECT
+    }]
   }
 }
 
@@ -154,6 +191,7 @@ const handlers = {
   [soundTypes.FETCH_RECORDINGS_SUCCESS]: fetchSoundSuccess,
   [soundTypes.SET_RANDOM_SPECIE_DATA]: setRandomSpecieData,
   [soundTypes.SET_RANDOM_RECORDING]: setRandomRecording,
+  [soundTypes.ADD_ROUND]: addRound,
   [soundTypes.GUESS_SUCCESS]: correctGuess,
   [soundTypes.GUESS_FAIL]: incorrectGuess,
   [soundTypes.GUESS_RESET]: resetGuess

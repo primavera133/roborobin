@@ -9,5 +9,7 @@ export const INITIAL_STATE = {
   lastValidated: '',
   recordings: {},
   randomSpecieData: null,
-  randomRecording: null
+  randomRecording: null,
+  rounds: [],
+  guesses: []
 }

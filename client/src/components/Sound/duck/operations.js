@@ -37,14 +37,32 @@ const makeAGuess = specie => {
     const isCorrectGuess = specie.scientificName === randomSpecieData.scientificName
 
     if (isCorrectGuess) {
-      dispatch(soundCreators.guessSuccess())
+      dispatch(soundCreators.guessSuccess(specie))
     } else {
-      dispatch(soundCreators.guessFail())
+      dispatch(soundCreators.guessFail(specie))
     }
   }
 }
 
+const startNewRound = () => {
+  return (dispatch, getState) => {
+    dispatch(selectRandomSpecie())
+
+    const state = getState()
+    const specie = soundSelectors.getRandomSpecieData(state)
+    const recording = soundSelectors.getRandomRecording(state)
+    const newRound = {
+      specie,
+      recording,
+      success: false
+    }
+
+    dispatch(soundCreators.addRound(newRound))
+  }
+}
+
 export default {
+  startNewRound,
   selectRandomSpecie,
   makeAGuess
 }

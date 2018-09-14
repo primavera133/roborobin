@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => {
   const setAddSpeciesInputValue = value => dispatch(setupCreators.setAddSpeciesInputValue(value))
   const addSpecie = searchQuery => dispatch(setupOperations.addSpecie())
   const removeSpecie = specie => dispatch(setupCreators.removeSpecie(specie))
-  const playRecording = specie => dispatch(setupCreators.playRecording())
+  const playRecording = () => dispatch(setupCreators.playRecording())
 
   return {
     setAddSpeciesInputValue,
