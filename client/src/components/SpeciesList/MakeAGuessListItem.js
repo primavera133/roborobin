@@ -14,11 +14,12 @@ export default class MakeAGuessListItem extends Component {
   }
 
   render () {
-    const { specie, lastGuess, lastRoundHasSuccess } = this.props
+    const { specie, lastGuess } = this.props
     const hasResult = lastGuess && lastGuess.specie.scientificName === specie.scientificName
     const result = hasResult && lastGuess.result
     const isCorrect = hasResult && result === GUESS_STATES.CORRECT
     const isIncorrect = hasResult && result === GUESS_STATES.INCORRECT
+    const lastRoundHasSuccess = lastGuess && lastGuess.result === GUESS_STATES.CORRECT
     return (
       <li>
         <button

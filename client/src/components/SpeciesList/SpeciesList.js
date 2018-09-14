@@ -3,7 +3,7 @@ import shortid from 'shortid'
 import SpecieListItem from './SpecieListItem'
 import MakeAGuessListItem from './MakeAGuessListItem'
 
-export default ({ species, removeSpecie, makeAGuess, lastGuess, lastRoundHasSuccess }) => {
+export default ({ species, removeSpecie, makeAGuess, lastGuess }) => {
   return (
     <ul>
       {!species.length && <li>
@@ -15,7 +15,6 @@ export default ({ species, removeSpecie, makeAGuess, lastGuess, lastRoundHasSucc
           specie={specie}
           makeAGuess={makeAGuess}
           lastGuess={lastGuess}
-          lastRoundHasSuccess={lastRoundHasSuccess}
         />
       ))}
 

@@ -21,15 +21,13 @@ const mapStateToProps = state => {
   const url = randomRecording ? `https:${randomRecording.file}` : ''
   const guessState = soundSelectors.getGuessState(state)
   const lastGuess = soundSelectors.getLastGuess(state)
-  const lastRoundHasSuccess = soundSelectors.lastRoundHasSuccess(state)
   return {
     species,
     randomSpecieData,
     randomRecording,
     url,
     guessState,
-    lastGuess,
-    lastRoundHasSuccess
+    lastGuess
   }
 }
 

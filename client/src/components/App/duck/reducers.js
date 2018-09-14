@@ -80,7 +80,9 @@ const editList = (state, action) => {
   return {
     ...state,
     showSetup: true,
-    playRecording: false
+    playRecording: false,
+    rounds: [],
+    guesses: []
   }
 }
 
