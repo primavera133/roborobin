@@ -16,7 +16,7 @@ class App extends Component {
           <div className='column'>
             <h1>Practice your skills</h1>
             <ol>
-              <li>First make a list of species.</li>
+              <li>First make a list of species. Search any species available from Xeno-canto. English names or scientific works.</li>
               <li>Then play a random recording of any of the species from your list.</li>
               <li>Guess which of the species was in the recording.</li>
             </ol>

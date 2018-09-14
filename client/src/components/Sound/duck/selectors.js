@@ -36,7 +36,6 @@ const getLastRoundHasSuccess = state => {
 const getRoundHasAnyGuess = state => {
   const rounds = getRounds(state)
   const lastGuess = getLastGuess(state)
-  console.log(777, lastGuess, lastGuess && lastGuess.roundIdx === (rounds.length - 1))
   return lastGuess && lastGuess.roundIdx === (rounds.length - 1)
 }
 
@@ -45,7 +44,9 @@ export default {
   getRandomRecording,
   getRandomSpecieData,
   getGuessState,
+  getGuesses,
   getLastGuess,
+  getRounds,
   getLastRoundHasSuccess,
   getRoundHasAnyGuess
 }

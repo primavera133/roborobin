@@ -14,7 +14,6 @@ const addSpecie = () => {
       if (json.numRecordings && json.numRecordings > 0) {
         dispatch(setupCreators.addSpecieSuccess(key, json))
       } else {
-        console.error('not good enough json', json)
         dispatch(setupCreators.addSpecieFail())
       }
     } catch (err) {

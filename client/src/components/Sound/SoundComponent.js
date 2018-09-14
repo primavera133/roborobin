@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import SpeciesList from '../SpeciesList/SpeciesList'
 import GuessInfo from '../GuessInfo/GuessInfo'
 import NewRound from '../NewRound/NewRound'
+import Scores from '../Scores/ScoresContainer'
 
 const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
   return (
@@ -23,6 +24,8 @@ const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editL
       {roundHasAnyGuess && <GuessInfo lastGuess={lastGuess} url={url} randomSpecieData={randomSpecieData} randomRecording={randomRecording} />}
 
       <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
+
+      <Scores />
 
       <button onClick={editList}>Edit list</button>
     </div>
