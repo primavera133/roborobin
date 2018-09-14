@@ -1,11 +1,14 @@
 import fetch from 'isomorphic-fetch'
-import { setupCreators } from './index'
+import { setupCreators, setupSelectors } from './index'
 
-const addSpecie = ({ searchQuery }) => {
-  return async dispatch => {
+const addSpecie = () => {
+  return async (dispatch, getState) => {
     try {
-      dispatch(setupCreators.addSpecie(searchQuery))
-      const key = encodeURIComponent(searchQuery)
+      const state = getState()
+      const addSpeciesValue = setupSelectors.getAddSpeciesValue(state)
+
+      dispatch(setupCreators.addSpecie(addSpeciesValue))
+      const key = encodeURIComponent(addSpeciesValue)
       const result = await fetch(`/api/recordings/${key}`)
       const json = await result.json()
       if (json.numRecordings && json.numRecordings > 0) {

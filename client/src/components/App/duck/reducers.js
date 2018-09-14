@@ -9,7 +9,14 @@ export const GUESS_STATES = {
   THINKING: 'THINKING'
 }
 
-const addSpecie = (state = INITIAL_STATE, action) => {
+const setAddSpeciesInputValue = (state, action) => {
+  return {
+    ...state,
+    addSpeciesInputValue: action.value
+  }
+}
+
+const addSpecie = (state, action) => {
   return {
     ...state,
     validating: action.value,
@@ -106,6 +113,13 @@ const setRandomSpecieData = (state, action) => {
   }
 }
 
+const setRandomRecording = (state, action) => {
+  return {
+    ...state,
+    randomRecording: action.value
+  }
+}
+
 const correctGuess = (state, action) => {
   return {
     ...state,
@@ -128,6 +142,7 @@ const resetGuess = (state, action) => {
 }
 
 const handlers = {
+  [setupTypes.SET_ADD_SPECIES_INPUT_VALUE]: setAddSpeciesInputValue,
   [setupTypes.ADD_SPECIE]: addSpecie,
   [setupTypes.ADD_SPECIE_FAIL]: addSpecieFail,
   [setupTypes.ADD_SPECIE_SUCCESS]: addSpecieSuccess,
@@ -138,6 +153,7 @@ const handlers = {
   [soundTypes.FETCH_RECORDINGS_FAIL]: fetchRecordingsFail,
   [soundTypes.FETCH_RECORDINGS_SUCCESS]: fetchSoundSuccess,
   [soundTypes.SET_RANDOM_SPECIE_DATA]: setRandomSpecieData,
+  [soundTypes.SET_RANDOM_RECORDING]: setRandomRecording,
   [soundTypes.GUESS_SUCCESS]: correctGuess,
   [soundTypes.GUESS_FAIL]: incorrectGuess,
   [soundTypes.GUESS_RESET]: resetGuess

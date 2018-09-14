@@ -10,12 +10,14 @@ class SetupContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  const addSpeciesValue = setupSelectors.getAddSpeciesValue(state)
   const species = setupSelectors.getSpecies(state)
   const validatingSpecies = setupSelectors.getValidationState(state)
   const validationFailed = setupSelectors.getValidationStatus(state)
   const validating = setupSelectors.getValidating(state)
   const lastValidated = setupSelectors.getLastValidated(state)
   return {
+    addSpeciesValue,
     species,
     validatingSpecies,
     validationFailed,
@@ -25,11 +27,13 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  const addSpecie = searchQuery => dispatch(setupOperations.addSpecie({ searchQuery }))
+  const setAddSpeciesInputValue = value => dispatch(setupCreators.setAddSpeciesInputValue(value))
+  const addSpecie = searchQuery => dispatch(setupOperations.addSpecie())
   const removeSpecie = specie => dispatch(setupCreators.removeSpecie(specie))
   const playRecording = specie => dispatch(setupCreators.playRecording())
 
   return {
+    setAddSpeciesInputValue,
     addSpecie,
     removeSpecie,
     playRecording

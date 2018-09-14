@@ -5,6 +5,7 @@ const { Types, Creators } = createActions({
   fetchRecordingsSuccess: ['key', 'value'],
   fetchRecordingsFail: ['error'],
   setRandomSpecieData: ['value'],
+  setRandomRecording: ['value'],
   guessSuccess: [],
   guessFail: [],
   guessReset: []

@@ -6,9 +6,13 @@ class SetupComponent extends Component {
   constructor (props) {
     super(props)
 
-    this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleAddSpecie = this.handleAddSpecie.bind(this)
-    this.inputRef = React.createRef()
+    this.handleKeyUp = this.handleKeyUp.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this)
+  }
+
+  handleOnChange (e) {
+    this.props.setAddSpeciesInputValue(e.target.value)
   }
 
   handleKeyUp (e) {
@@ -19,12 +23,21 @@ class SetupComponent extends Component {
 
   handleAddSpecie () {
     if (!this.props.validatingSpecies) {
-      this.props.addSpecie(this.inputRef.current.value)
+      this.props.addSpecie()
     }
   }
 
   render () {
-    const { species, removeSpecie, validatingSpecies, validationFailed, validating, lastValidated, playRecording } = this.props
+    const {
+      addSpeciesValue,
+      species,
+      removeSpecie,
+      validatingSpecies,
+      validationFailed,
+      validating,
+      lastValidated,
+      playRecording
+    } = this.props
     return (
       <Fragment>
         <div className='row'>
@@ -39,8 +52,9 @@ class SetupComponent extends Component {
                 name='addSpecie'
                 maxLength='100'
                 placeholder='enter specie name'
-                ref={this.inputRef}
+                value={addSpeciesValue}
                 disabled={validatingSpecies}
+                onChange={this.handleOnChange}
                 onKeyUp={this.handleKeyUp}
               />
               <button
