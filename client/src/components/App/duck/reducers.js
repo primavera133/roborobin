@@ -45,6 +45,7 @@ const addSpecieSuccess = (state, action) => {
     validating: '',
     isValidationFailed: false,
     isValidatingSpecies: false,
+    addSpeciesInputValue: '',
     species: state.species.concat(newSpecie),
     recordings: {
       ...state.recordings,
