@@ -18,7 +18,7 @@ export default class SpecieItem extends Component {
       <li>
         {specie.scientificName}
         <a onClick={this.handleClick}>
-          <span className='sr-only'>Remove this specie from list</span>
+          <span className='skel-sr-only'>Remove this specie from list</span>
           <FontAwesome name='minus-circle' title='Remove this specie from list' />
         </a>
       </li>

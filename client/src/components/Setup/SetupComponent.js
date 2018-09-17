@@ -40,8 +40,8 @@ class SetupComponent extends Component {
     } = this.props
     return (
       <Fragment>
-        <div className='row'>
-          <div className='column'>
+        <div className='skel-row'>
+          <div className='skel-column'>
             <h4>Current specie list</h4>
 
             <SpeciesList species={species} removeSpecie={removeSpecie} />

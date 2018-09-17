@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import '../../scss/skeleton.css'
 import './app.css'
 import 'react-select/dist/react-select.css'
 
@@ -11,9 +12,9 @@ class App extends Component {
   render () {
     const { showSetup, playRecording } = this.props
     return (
-      <div className='App container'>
-        <div className='row'>
-          <div className='column'>
+      <div className='App skel-container'>
+        <div className='skel-row'>
+          <div className='skel-column'>
             <h1>Practice your skills</h1>
             <ol>
               <li>First make a list of species. Search any species available from Xeno-canto. English names or scientific works.</li>
