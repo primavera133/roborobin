@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { GUESS_STATES } from '../App/duck/reducers'
+import FontAwesome from 'react-fontawesome'
 
 export default ({ lastGuess, startNewRound}) => {
   const hasResult = !!lastGuess
@@ -12,7 +13,8 @@ export default ({ lastGuess, startNewRound}) => {
       <button
         onClick={startNewRound}
       >
-        Start new round
+        <span className='btn-text'>Start new round</span>
+        <FontAwesome name='volume-up' />
       </button>
     </div>
     }

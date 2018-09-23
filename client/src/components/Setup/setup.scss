@@ -1,0 +1,58 @@
+.setup-add {
+  margin: 0 0 40px;
+
+  /*
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  */
+
+  .h3 {
+    margin: 0 10px 0 0;
+    display: block;
+    vertical-align: middle;
+  }
+
+  input {
+    padding: 10px;
+    border-radius: 8px;
+    border-color: transparent;
+    border-width: 4px;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .3);
+    margin: 0 10px 0 0;
+    font-size: 1rem;
+    vertical-align: middle;
+    width: calc(100% - 70px);
+  }
+
+  .btn-add {
+    vertical-align: middle;
+    padding: 8px;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    color: #2b9435;
+    font-size: 2.4rem;
+    box-shadow: none;
+  }
+
+  .setup-message {
+    margin: 0;
+  }
+
+}
+
+.setup-play {
+  margin: 0;
+  .btn-play {
+    margin: 0 10px 0 0;
+  }
+}
+
+
+.text-icon {
+  padding-left: 10px;
+}

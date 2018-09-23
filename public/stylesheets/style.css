@@ -1,8 +1,82 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html {
+    padding: 0;
+    height: 100%;
 }
 
-a {
-  color: #00B7FF;
+body {
+    height: 100%;
+    background: white;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 2.3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.root {
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Merienda One', sans-serif;
+    line-height: 1;
+    color: #da0303;
+}
+
+.h1 {
+    text-shadow: 2px 2px 2px #000;
+    font-size: 2.9rem;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 414px) {
+    .h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .h1 {
+        font-size: 6rem;
+    }
+}
+
+h2, h3 {
+    font-family: 'Coiny', cursive;
+    font-weight: normal;
+    color: #da0303;
+    text-shadow: 1.5px 1.5px 0.1px #593226;
+    line-height: 1;
+}
+
+.h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-top: 0;
+}
+
+.h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+h4, h5 {
+    font-family: 'Coiny', cursive;
+    font-weight: normal;
+    margin: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+p.centered {
+    text-align: ;
 }

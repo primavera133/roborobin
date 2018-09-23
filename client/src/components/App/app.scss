@@ -1,2 +1,92 @@
-.App {
+.app {
+  min-height: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fffef0;
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .app {
+    padding: 50px;
+  }
+}
+
+.instructions {
+  padding: 0 0 0 20px;
+  margin: 0 0 40px;
+}
+
+button {
+  font-family: 'Coiny', cursive;
+  font-weight: normal;
+  padding: 0.7rem 1.5rem;
+  background-color: white;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(36, 36, 36, .4);
+  box-shadow: 0 2px 3px rgba(50, 50, 93, .11), 0 1px 2px rgba(0, 0, 0, .08);
+  transition: all .15s ease;
+  outline: none;
+  position: relative;
+
+  .btn-text {
+    margin-right: 10px;
+  }
+
+  .btn-icon {
+    position: absolute;
+    font-size: 2.3rem;
+    text-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+    &--correct {
+      top: -10px;
+      animation: wigglePos 2.5s infinite;
+    }
+    &--incorrect {
+      top: 21px;
+      animation: wiggleNeg 2.5s infinite;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  }
+
+  &:focus {
+    box-shadow: 0 2px 3px rgba(0, 130, 255, .8), 0 1px 3px rgba(0, 130, 255, .8);
+  }
+}
+
+footer {
+  margin-top: 100px;
+}
+
+@keyframes wigglePos {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(0deg); }
+  20% { transform: rotate(5deg); }
+  30% { transform: rotate(-5deg); }
+  40% { transform: rotate(0deg); }
+  50% { transform: rotate(-5deg); }
+  70% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes wiggleNeg {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(0deg); }
+  12% { transform: rotate(5deg); }
+  15% { transform: rotate(-5deg); }
+  18% { transform: rotate(5deg); }
+  20% { transform: rotate(-5deg); }
+  25% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }

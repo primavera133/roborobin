@@ -1,10 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import FontAwesome from 'react-fontawesome'
 import SpeciesList from '../SpeciesList/SpeciesList'
+import './setup.css'
 
 class SetupComponent extends Component {
   constructor (props) {
     super(props)
+
+    this.inputRef = React.createRef()
 
     this.handleAddSpecie = this.handleAddSpecie.bind(this)
     this.handleKeyUp = this.handleKeyUp.bind(this)
@@ -22,7 +25,7 @@ class SetupComponent extends Component {
   }
 
   handleAddSpecie () {
-    if (!this.props.validatingSpecies) {
+    if (!this.props.validatingSpecies && this.inputRef.current.value) {
       this.props.addSpecie()
     }
   }
@@ -40,46 +43,55 @@ class SetupComponent extends Component {
     } = this.props
     return (
       <Fragment>
-        <div className='skel-row'>
-          <div className='skel-column'>
-            <h4>Current specie list</h4>
+        {!!species.length && (<h2 className='h2'>This is your current list</h2>)}
 
-            <SpeciesList species={species} removeSpecie={removeSpecie} />
+        {!species.length && <h2>
+          No species in your list, add at least one.
+        </h2>}
 
-            <div>
-              <input
-                type='text'
-                name='addSpecie'
-                maxLength='100'
-                placeholder='enter specie name'
-                value={addSpeciesValue}
-                disabled={validatingSpecies}
-                onChange={this.handleOnChange}
-                onKeyUp={this.handleKeyUp}
-              />
-              <button
-                onClick={this.handleAddSpecie}
-                disabled={validatingSpecies}
-              >Add specie to list</button>
-            </div>
-            {validatingSpecies && <p>
-              Looking for recordings of {validating}
-              <FontAwesome name='spinner' spin />
-            </p>}
-            {validationFailed && <p>
-              <FontAwesome name='exclamation-triangle' />
-              No recordings for {lastValidated}, try something else
-            </p>}
+        <SpeciesList species={species} removeSpecie={removeSpecie}/>
 
-            <div>
-              <button
-                onClick={playRecording}
-                disabled={!species.length}
-              >
-                Play sound!
-              </button>
-            </div>
-          </div>
+        <div className='setup-add'>
+          <h3 className='h3'>Add a bird</h3>
+          <input
+            type='text'
+            name='addSpecie'
+            maxLength='100'
+            placeholder='name of bird'
+            value={addSpeciesValue}
+            disabled={validatingSpecies}
+            onChange={this.handleOnChange}
+            onKeyUp={this.handleKeyUp}
+            ref={this.inputRef}
+          />
+          <button
+            onClick={this.handleAddSpecie}
+            disabled={validatingSpecies}
+            title='Search and add to the list'
+            className='btn-add'
+          >
+            <span className='sr-only'>Search and add to the list</span>
+            <FontAwesome name='plus-circle' title='Search and add to the list' spin={validatingSpecies}/>
+          </button>
+          {validatingSpecies && <p className='setup-message'>
+            <FontAwesome name='search'/>
+            <span className='text-icon'>Looking for recordings of {validating}</span>
+          </p>}
+          {validationFailed && <p className='setup-message'>
+            <FontAwesome name='exclamation-triangle'/>
+            <span className='text-icon'>No recordings for {lastValidated}, try something else</span>
+          </p>}
+        </div>
+
+        <div className='setup-play'>
+          <h3 className='h3'>Ready?</h3>
+          <button
+            onClick={playRecording}
+            disabled={!species.length}
+          >
+            <span className='btn-text'>Start playing!</span>
+            <FontAwesome name='volume-up'/>
+          </button>
         </div>
       </Fragment>
     )

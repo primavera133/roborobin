@@ -23,17 +23,22 @@ export const initStore = () => {
     if (!store) {
       localforage.getItem('state')
         .then(persistedState => {
-          store = createStore(
-            rootReducer,
-            persistedState,
-            enhancer,
-          )
+          store = persistedState
+            ? createStore(
+              rootReducer,
+              persistedState,
+              enhancer
+            )
+            : createStore(
+              rootReducer,
+              enhancer
+            )
 
           store.subscribe(debounce(() => {
             const state = store.getState()
             localforage.setItem('state', state)
               .catch(console.error)
-          }, 500, { leading: false }))
+          }, 500, {leading: false}))
 
           if (module.hot) {
             module.hot.accept('./reducers', () => {

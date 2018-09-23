@@ -16,11 +16,11 @@ export default class SpecieItem extends Component {
     const { specie } = this.props
     return (
       <li>
+        <button onClick={this.handleClick} className='btn-list-remove' title='Remove this specie from list'>
+          <span className='sr-only'>Remove this specie from list</span>
+          <FontAwesome name='times-circle' />
+        </button>
         {specie.scientificName}
-        <a onClick={this.handleClick}>
-          <span className='skel-sr-only'>Remove this specie from list</span>
-          <FontAwesome name='minus-circle' title='Remove this specie from list' />
-        </a>
       </li>
     )
   }

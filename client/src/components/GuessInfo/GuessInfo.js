@@ -1,7 +1,8 @@
 import React from 'react'
 import { GUESS_STATES } from '../App/duck/reducers'
+import NewRound from '../NewRound/NewRound'
 
-export default ({ lastGuess, url, randomRecording }) => {
+export default ({lastGuess, url, randomRecording, startNewRound}) => {
   const hasResult = !!lastGuess
   const result = hasResult && lastGuess.result
   const isCorrect = hasResult && result === GUESS_STATES.CORRECT
@@ -10,16 +11,14 @@ export default ({ lastGuess, url, randomRecording }) => {
   return (<div>
     {isCorrect &&
     <div>
+      <h4>That was correct!</h4>
       <p>
-        That was correct!
+        Recorded by: {randomRecording.rec}<br/>
+        Recorder at: {randomRecording.cnt}, {randomRecording.loc}<br/>
+        more info: <a href={randomRecording.url} target='_blank'>{randomRecording.url}</a>
       </p>
-      <p>{url}</p>
 
-      <ul>
-        <li>Recorded by: {randomRecording.rec}</li>
-        <li>Recorder at: {randomRecording.cnt}, {randomRecording.loc}</li>
-        <li>more info: <a href={randomRecording.url} target="_blank">{randomRecording.url}</a></li>
-      </ul>
+      <NewRound lastGuess={lastGuess} startNewRound={startNewRound}/>
 
     </div>
     }

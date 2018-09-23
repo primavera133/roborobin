@@ -1,4 +1,5 @@
 import { createReducer } from 'reduxsauce'
+import { appTypes } from '../../App/duck'
 import { soundTypes } from '../../Sound/duck'
 import { setupTypes } from '../../Setup/duck'
 import { INITIAL_STATE } from './initalState'
@@ -7,6 +8,10 @@ export const GUESS_STATES = {
   CORRECT: 'CORRECT',
   INCORRECT: 'INCORRECT',
   THINKING: 'THINKING'
+}
+
+const resetApp = (state, action) => {
+  return {...INITIAL_STATE}
 }
 
 const setAddSpeciesInputValue = (state, action) => {
@@ -182,6 +187,7 @@ const resetGuess = (state, action) => {
 }
 
 const handlers = {
+  [appTypes.RESET_APP]: resetApp,
   [setupTypes.SET_ADD_SPECIES_INPUT_VALUE]: setAddSpeciesInputValue,
   [setupTypes.ADD_SPECIE]: addSpecie,
   [setupTypes.ADD_SPECIE_FAIL]: addSpecieFail,

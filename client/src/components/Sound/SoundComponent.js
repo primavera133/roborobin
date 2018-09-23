@@ -1,15 +1,20 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types'
-import SpeciesList from '../SpeciesList/SpeciesList'
+import MakeAGuessList from '../MakeAGuessList/MakeAGuessList'
 import GuessInfo from '../GuessInfo/GuessInfo'
-import NewRound from '../NewRound/NewRound'
 import Scores from '../Scores/ScoresContainer'
+import FontAwesome from 'react-fontawesome'
+import './sound.css'
 
 const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
   return (
-    <div className='Sound'>
-      <h4>Guess the specie</h4>
+    <div className='sound'>
+      <h2 className='h2'>Time to play!</h2>
+      <p>
+        Robo-robin will now play a random recording of any of your selected species. Guess which one!
+      </p>
+
       {url && (<ReactPlayer
         url={url}
         playing
@@ -19,15 +24,21 @@ const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editL
       />
       )}
 
-      <SpeciesList species={species} makeAGuess={makeAGuess} lastGuess={lastGuess} roundHasAnyGuess={roundHasAnyGuess} />
+      <MakeAGuessList species={species} makeAGuess={makeAGuess} lastGuess={lastGuess}
+        roundHasAnyGuess={roundHasAnyGuess} />
 
-      {roundHasAnyGuess && <GuessInfo lastGuess={lastGuess} url={url} randomSpecieData={randomSpecieData} randomRecording={randomRecording} />}
-
-      <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
+      {roundHasAnyGuess && <GuessInfo lastGuess={lastGuess} url={url} randomSpecieData={randomSpecieData}
+        randomRecording={randomRecording} startNewRound={startNewRound} />}
 
       <Scores />
 
-      <button onClick={editList}>Edit list</button>
+      <p className='centered'>
+        <button onClick={editList}>
+          <span className='btn-text'>Change the list </span>
+          <FontAwesome name='user-edit' />
+        </button>
+      </p>
+
     </div>
   )
 }
