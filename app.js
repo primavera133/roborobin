@@ -7,7 +7,6 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
-const indexRouter = require('./routes/index')
 const soundsRouter = require('./routes/sounds')
 
 const app = express()
@@ -20,9 +19,8 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public/build')))
 
-app.use('/', indexRouter)
 app.use('/api', soundsRouter)
 
 // catch 404 and forward to error handler

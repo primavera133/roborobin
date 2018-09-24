@@ -1,7 +1,6 @@
 ### Project specific
-dist/
-/app/build/*
-/app/public/downloads/*
+client/build/*
+public/*
 .env
 
 # Created by https://www.gitignore.io/api/web,node,linux,macos,windows

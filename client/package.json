@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@blueprintjs/core": "^3.6.1",
     "babel-polyfill": "^6.26.0",
     "localforage": "^1.7.2",
     "lodash.throttle": "^4.1.1",

@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3001 nodemon --watch helpers --watch routes --watch views ./bin/www"
+    "start": "PORT=3001 nodemon --watch helpers --watch routes --watch views ./bin/www",
+    "move-build": "cp -R ./client/build ./public",
+    "build-client": "cd ./client && yarn run build",
+    "build": "yarn run build-client && yarn run move-build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",

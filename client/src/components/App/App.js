@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import './normalize.css'
+import './style.css'
 import './app.css'
 
 import SoundContainer from '../Sound/SoundContainer'
