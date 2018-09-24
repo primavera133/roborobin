@@ -6,8 +6,7 @@ import './app.css'
 
 import SoundContainer from '../Sound/SoundContainer'
 import SetupContainer from '../Setup/SetupContainer'
-import { appSelectors } from './duck'
-import { appCreators } from './duck'
+import { appSelectors, appCreators } from './duck'
 
 class App extends Component {
   render () {
@@ -18,8 +17,8 @@ class App extends Component {
         <p>Robo-robin knows all bird songs and can help you to learn them!</p>
         <ol className={'instructions'}>
           <li>First make a list of species. Search any species available from <a href='https://xeno-canto.org'
-                                                                                 target='_blank'
-                                                                                 rel='noopener noreferrer'>Xeno-canto</a>.
+            target='_blank'
+            rel='noopener noreferrer'>Xeno-canto</a>.
             English
             names or scientific works.
           </li>

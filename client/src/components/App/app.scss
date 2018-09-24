@@ -5,11 +5,16 @@
   padding: 20px;
   background: #fffef0;
   box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.15);
+  background-image: url("/img/roborobin.jpg");
+  background-size: 90px;
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
 }
 
 @media (min-width: 768px) {
   .app {
     padding: 50px;
+    background-size: 160px;
   }
 }
 
