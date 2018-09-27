@@ -1,5 +1,8 @@
 FROM node:8-alpine
 
+ENV PORT=80
+ENV NODE_ENV=production
+
 # install yarn
 RUN apk add --no-cache yarn
 
@@ -14,5 +17,5 @@ RUN yarn
 WORKDIR /usr/src/app
 RUN yarn run build
 
-EXPOSE 3001
+EXPOSE 80
 CMD ["yarn", "run", "start"]

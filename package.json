@@ -1,12 +1,14 @@
 {
-  "name": "fenologi",
-  "version": "0.0.0",
+  "name": "robo-robin",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "PORT=3001 nodemon --watch helpers --watch routes --watch views ./bin/www",
+    "start": "nodemon --watch helpers --watch routes --watch views ./bin/www",
     "move-build": "cp -R ./client/build ./public",
     "build-client": "cd ./client && yarn run build",
-    "build": "yarn run build-client && yarn run move-build"
+    "build": "yarn run build-client && yarn run move-build",
+    "build-docker": "docker build -t robo-robin .",
+    "run-docker": "docker run -p 80:80 robo-robin"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
