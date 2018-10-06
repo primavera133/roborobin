@@ -5,13 +5,14 @@
   "scripts": {
     "start": "nodemon --watch helpers --watch routes --watch views ./bin/www",
     "move-build": "cp -R ./client/build ./public",
-    "build-client": "cd ./client && yarn run build",
-    "build": "yarn run build-client && yarn run move-build",
+    "build-client": "cd ./client && yarn run build && cd ..",
+    "install-client": "cd ./client && yarn install && cd ..",
+    "build": "yarn run install-client && yarn run build-client && yarn run move-build",
+    "bild-now": "yarn run build && yarn run start",
     "build-docker": "docker build -t robo-robin .",
     "run-docker": "docker run -p 80:80 robo-robin"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
     "date-fns": "^1.29.0",
     "debug": "~2.6.9",
     "dotenv": "^6.0.0",

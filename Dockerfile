@@ -1,6 +1,6 @@
-FROM node:8-alpine
+FROM node:8-alpine as builder
 
-ENV PORT=80
+ENV PORT=3000
 ENV NODE_ENV=production
 
 # install yarn
@@ -17,5 +17,17 @@ RUN yarn
 WORKDIR /usr/src/app
 RUN yarn run build
 
-EXPOSE 80
-CMD ["yarn", "run", "start"]
+# Shave off some unecessary bytes
+FROM node:8-alpine as prod
+
+RUN npm install -g nodemon
+
+RUN mkdir -p /usr/app
+WORKDIR /usr/app
+COPY --from=builder /usr/src/app .
+RUN rm -rf ./client
+RUN rm -rf ./node_modules
+
+EXPOSE 3000
+## CMD ["yarn", "run", "start"]
+CMD ["nodemon", "./bin/www"]
