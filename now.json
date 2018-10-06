@@ -1,4 +1,5 @@
 {
   "name": "roborobin",
-  "type": "docker"
+  "type": "docker",
+  "alias": ["beta.roborobin.net"]
 }
