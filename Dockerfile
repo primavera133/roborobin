@@ -26,7 +26,7 @@ RUN mkdir -p /usr/app
 WORKDIR /usr/app
 COPY --from=builder /usr/src/app .
 RUN rm -rf ./client
-RUN rm -rf ./node_modules
+# RUN rm -rf ./node_modules
 
 EXPOSE 3000
 ## CMD ["yarn", "run", "start"]
