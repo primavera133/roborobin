@@ -1,9 +1,17 @@
+@import "./style.scss";
+
+body {
+  background-color: #53beac;
+  background: url('/img/kazuend-40010-unsplash_teal.jpg');
+  background-size: cover;
+}
+
 .app {
   min-height: 100%;
   max-width: 768px;
   margin: 0 auto;
   padding: 20px;
-  background: #fffef0;
+  background: #f0eeeb;
   box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.15);
   background-image: url("/img/roborobin.png");
   background-size: 90px;
@@ -24,18 +32,24 @@
 }
 
 button {
-  font-family: 'Coiny', cursive;
+  font-family: 'Merienda One', cursive;
   font-weight: normal;
   padding: 0.7rem 1.5rem;
-  background-color: white;
+  background-color: $yellow;
+  color: white;
   border-radius: 6px;
   font-size: 1.5rem;
   line-height: 1;
-  text-shadow: 0 1px 3px rgba(36, 36, 36, .4);
+  text-shadow: 0 1px 3px rgba(36, 36, 36, 1);
   box-shadow: 0 2px 3px rgba(50, 50, 93, .11), 0 1px 2px rgba(0, 0, 0, .08);
   transition: all .15s ease;
   outline: none;
   position: relative;
+
+  &[disabled] {
+    background: $yellow-disabled;
+    color: $white-disabled;
+  }
 
   .btn-text {
     margin-right: 10px;
