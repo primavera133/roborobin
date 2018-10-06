@@ -1,9 +1,8 @@
 import React from 'react'
-import shortid from 'shortid'
 import MakeAGuessListItem from './MakeAGuessListItem'
 import './makeAGuessList.css'
 
-export default ({ species, removeSpecie, makeAGuess, lastGuess, roundHasAnyGuess }) => {
+export default ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
   return (
     <ul className='make-a-guess-list'>
       {!species.length && <li>
@@ -11,7 +10,7 @@ export default ({ species, removeSpecie, makeAGuess, lastGuess, roundHasAnyGuess
       </li>}
       {makeAGuess && species.map(specie => (
         <MakeAGuessListItem
-          key={shortid.generate()}
+          key={specie.scientificName}
           specie={specie}
           makeAGuess={makeAGuess}
           lastGuess={lastGuess}

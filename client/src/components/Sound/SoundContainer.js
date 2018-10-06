@@ -16,7 +16,6 @@ class SoundContainer extends Component {
 
 const mapStateToProps = state => {
   const species = setupSelectors.getSpecies(state)
-  const randomSpecieData = soundSelectors.getRandomSpecieData(state)
   const randomRecording = soundSelectors.getRandomRecording(state)
   const url = randomRecording ? `https:${randomRecording.file}` : ''
   const guessState = soundSelectors.getGuessState(state)
@@ -25,7 +24,6 @@ const mapStateToProps = state => {
   const roundHasAnyGuess = soundSelectors.getRoundHasAnyGuess(state)
   return {
     species,
-    randomSpecieData,
     randomRecording,
     url,
     guessState,

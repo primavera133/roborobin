@@ -49,7 +49,7 @@ class SetupComponent extends Component {
           No species in your list, add at least one.
         </h2>}
 
-        <SpeciesList species={species} removeSpecie={removeSpecie}/>
+        <SpeciesList species={species} removeSpecie={removeSpecie} />
 
         <div className='setup-add'>
           <h3 className='h3'>Add a bird</h3>
@@ -71,14 +71,14 @@ class SetupComponent extends Component {
             className='btn-add'
           >
             <span className='sr-only'>Search and add to the list</span>
-            <FontAwesome name='plus-circle' title='Search and add to the list' spin={validatingSpecies}/>
+            <FontAwesome name='plus-circle' title='Search and add to the list' spin={validatingSpecies} />
           </button>
           {validatingSpecies && <p className='setup-message'>
-            <FontAwesome name='search'/>
+            <FontAwesome name='search' />
             <span className='text-icon'>Looking for recordings of {validating}</span>
           </p>}
           {validationFailed && <p className='setup-message'>
-            <FontAwesome name='exclamation-triangle'/>
+            <FontAwesome name='exclamation-triangle' />
             <span className='text-icon'>No recordings for {lastValidated}, try something else</span>
           </p>}
         </div>
@@ -90,7 +90,7 @@ class SetupComponent extends Component {
             disabled={!species.length}
           >
             <span className='btn-text'>Start playing!</span>
-            <FontAwesome name='volume-up'/>
+            <FontAwesome name='volume-up' />
           </button>
         </div>
       </Fragment>

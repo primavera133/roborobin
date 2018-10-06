@@ -14,7 +14,7 @@ export default class MakeAGuessListItem extends Component {
   }
 
   render () {
-    const {specie, lastGuess, roundHasAnyGuess} = this.props
+    const { specie, lastGuess, roundHasAnyGuess } = this.props
     const hasResult = roundHasAnyGuess && lastGuess && lastGuess.specie.scientificName === specie.scientificName
     const result = hasResult && lastGuess.result
     const isCorrect = hasResult && result === GUESS_STATES.CORRECT
@@ -31,8 +31,8 @@ export default class MakeAGuessListItem extends Component {
           className={`${isCorrect ? 'btn-success' : ''} ${isIncorrect ? 'btn-wrong' : ''}`}
         >
           <span className='btn-text'>{specie.scientificName}</span>
-          {isIncorrect && (<span className='btn-icon btn-icon--incorrect'><FontAwesome name='thumbs-down'/></span>)}
-          {isCorrect && (<span className='btn-icon btn-icon--correct'><FontAwesome name='thumbs-up'/></span>)}
+          {isIncorrect && (<span className='btn-icon btn-icon--incorrect'><FontAwesome name='thumbs-down' /></span>)}
+          {isCorrect && (<span className='btn-icon btn-icon--correct'><FontAwesome name='thumbs-up' /></span>)}
         </button>
       </li>
     )

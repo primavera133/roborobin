@@ -38,7 +38,7 @@ export const initStore = () => {
             const state = store.getState()
             localforage.setItem('state', state)
               .catch(console.error)
-          }, 500, {leading: false}))
+          }, 500, { leading: false }))
 
           if (module.hot) {
             module.hot.accept('./reducers', () => {

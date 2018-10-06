@@ -2,7 +2,7 @@ import React from 'react'
 import { GUESS_STATES } from '../App/duck/reducers'
 import NewRound from '../NewRound/NewRound'
 
-export default ({lastGuess, url, randomRecording, startNewRound}) => {
+export default ({ lastGuess, randomRecording, startNewRound }) => {
   const hasResult = !!lastGuess
   const result = hasResult && lastGuess.result
   const isCorrect = hasResult && result === GUESS_STATES.CORRECT
@@ -13,12 +13,12 @@ export default ({lastGuess, url, randomRecording, startNewRound}) => {
     <div>
       <h4>That was correct!</h4>
       <p>
-        Recorded by: {randomRecording.rec}<br/>
-        Recorder at: {randomRecording.cnt}, {randomRecording.loc}<br/>
+        Recorded by: {randomRecording.rec}<br />
+        Recorder at: {randomRecording.cnt}, {randomRecording.loc}<br />
         more info: <a href={randomRecording.url} target='_blank'>{randomRecording.url}</a>
       </p>
 
-      <NewRound lastGuess={lastGuess} startNewRound={startNewRound}/>
+      <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
 
     </div>
     }

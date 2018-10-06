@@ -7,7 +7,7 @@ import Scores from '../Scores/ScoresContainer'
 import FontAwesome from 'react-fontawesome'
 import './sound.css'
 
-const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
+const SoundComponent = ({ randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
   return (
     <div className='sound'>
       <h2 className='h2'>Time to play!</h2>
@@ -27,8 +27,7 @@ const SoundComponent = ({ randomSpecieData, randomRecording, url, species, editL
       <MakeAGuessList species={species} makeAGuess={makeAGuess} lastGuess={lastGuess}
         roundHasAnyGuess={roundHasAnyGuess} />
 
-      {roundHasAnyGuess && <GuessInfo lastGuess={lastGuess} url={url} randomSpecieData={randomSpecieData}
-        randomRecording={randomRecording} startNewRound={startNewRound} />}
+      {roundHasAnyGuess && <GuessInfo lastGuess={lastGuess} randomRecording={randomRecording} startNewRound={startNewRound} />}
 
       <Scores />
 

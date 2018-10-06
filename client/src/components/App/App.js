@@ -10,7 +10,7 @@ import { appSelectors, appCreators } from './duck'
 
 class App extends Component {
   render () {
-    const {showSetup, playRecording, reset} = this.props
+    const { showSetup, playRecording, reset } = this.props
     return (
       <div className='app'>
         <h1 className='h1'>Robo-robin</h1>
@@ -26,8 +26,8 @@ class App extends Component {
           <li>Guess which of the species was in the recording.</li>
         </ol>
         <main>
-          {showSetup && <SetupContainer/>}
-          {playRecording && <SoundContainer/>}
+          {showSetup && <SetupContainer />}
+          {playRecording && <SoundContainer />}
         </main>
         <footer>
           <button onClick={reset}>Restart app</button>

@@ -25,5 +25,8 @@
     "nodemon": "^1.18.4",
     "standard": "^12.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "standard": {
+    "env": [ "jest" ]
+  }
 }
