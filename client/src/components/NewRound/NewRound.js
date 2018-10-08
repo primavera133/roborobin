@@ -13,7 +13,7 @@ export default ({ lastGuess, startNewRound }) => {
       <button
         onClick={startNewRound}
       >
-        <span className='btn-text'>Start new round</span>
+        <span className='btn-text'>Next round</span>
         <FontAwesome name='volume-up' />
       </button>
     </div>

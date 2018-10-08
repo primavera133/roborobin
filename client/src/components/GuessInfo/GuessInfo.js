@@ -14,7 +14,7 @@ export default ({ lastGuess, randomRecording, startNewRound }) => {
       <h4>That was correct!</h4>
       <p>
         Recorded by: {randomRecording.rec}<br />
-        Recorder at: {randomRecording.cnt}, {randomRecording.loc}<br />
+        Recorded at: {randomRecording.cnt}, {randomRecording.loc}<br />
         more info: <a href={randomRecording.url} target='_blank'>{randomRecording.url}</a>
       </p>
 
