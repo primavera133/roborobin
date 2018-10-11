@@ -8,10 +8,10 @@ export default ({ lastGuess, randomRecording, startNewRound }) => {
   const isCorrect = hasResult && result === GUESS_STATES.CORRECT
   const isIncorrect = hasResult && result === GUESS_STATES.INCORRECT
   // console.log(randomRecording)
-  return (<div>
+  return (<div aria-live='polite'>
     {isCorrect &&
     <div>
-      <h4>That was correct!</h4>
+      <h4 role='status' className='h4'>That was correct!</h4>
       <p>
         Recorded by: {randomRecording.rec}<br />
         Recorded at: {randomRecording.cnt}, {randomRecording.loc}<br />
@@ -19,12 +19,9 @@ export default ({ lastGuess, randomRecording, startNewRound }) => {
       </p>
 
       <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
-
     </div>
     }
 
-    {isIncorrect && <p>
-      Sorry, that was an incorrect guess
-    </p>}
+    {isIncorrect && <p role='status'>Sorry, that was an incorrect guess</p>}
   </div>)
 }

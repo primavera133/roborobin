@@ -3,14 +3,13 @@ import './scores.css'
 
 export default ({ scores }) => {
   return (<div className='scoreboard'>
-    <h3 className='h3'>Your scores</h3>
     <table>
+      <caption className='h3'>Your scores</caption>
       <thead>
-
         <tr>
-          <th>correct</th>
-          <th>incorrect</th>
-          <th>rounds</th>
+          <th scope='col'>correct</th>
+          <th scope='col'>incorrect</th>
+          <th scope='col'>rounds</th>
         </tr>
       </thead>
       <tbody>

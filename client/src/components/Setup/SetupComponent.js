@@ -52,9 +52,12 @@ class SetupComponent extends Component {
         <SpeciesList species={species} removeSpecie={removeSpecie} />
 
         <div className='setup-add'>
-          <h3 className='h3'>Add a bird</h3>
+          <label
+            htmlFor='addSpecie'
+            className='h3'>Add a bird</label>
           <input
             type='text'
+            id='addSpecie'
             name='addSpecie'
             maxLength='100'
             placeholder='name of bird'
@@ -63,6 +66,7 @@ class SetupComponent extends Component {
             onChange={this.handleOnChange}
             onKeyUp={this.handleKeyUp}
             ref={this.inputRef}
+            aria-invalid={validationFailed}
           />
           <button
             onClick={this.handleAddSpecie}
@@ -73,13 +77,13 @@ class SetupComponent extends Component {
             <span className='sr-only'>Search and add to the list</span>
             <FontAwesome name='plus-circle' title='Search and add to the list' spin={validatingSpecies} />
           </button>
-          {validatingSpecies && <p className='setup-message'>
+          {validatingSpecies && <p className='setup-message' aria-live='polite'>
             <FontAwesome name='search' />
             <span className='text-icon'>Looking for recordings of {validating}</span>
           </p>}
-          {validationFailed && <p className='setup-message'>
+          {validationFailed && <p className='setup-message' aria-live='assertive'>
             <FontAwesome name='exclamation-triangle' />
-            <span className='text-icon'>No recordings for {lastValidated}, try something else</span>
+            <span className='text-icon' role='alert'>No recordings for {lastValidated}, try something else</span>
           </p>}
         </div>
 
