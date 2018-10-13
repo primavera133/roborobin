@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import FontAwesome from 'react-fontawesome'
 import SpeciesList from '../SpeciesList/SpeciesList'
+import Header from '../Header/Header'
 import './setup.css'
 
 class SetupComponent extends Component {
@@ -43,11 +44,11 @@ class SetupComponent extends Component {
     } = this.props
     return (
       <Fragment>
-        {!!species.length && (<h2 className='h2'>This is your current list</h2>)}
+        {!!species.length && (<Header lvl='h2'>This is your current list</Header>)}
 
-        {!species.length && <h2>
+        {!species.length && <Header lvl='h2'>
           No species in your list, add at least one.
-        </h2>}
+        </Header>}
 
         <SpeciesList species={species} removeSpecie={removeSpecie} />
 
@@ -88,7 +89,7 @@ class SetupComponent extends Component {
         </div>
 
         <div className='setup-play'>
-          <h3 className='h3'>Ready?</h3>
+          <Header lvl='h3'>Ready?</Header>
           <button
             onClick={playRecording}
             disabled={!species.length}

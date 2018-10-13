@@ -2,7 +2,7 @@ import { createReducer } from 'reduxsauce'
 import { appTypes } from '../../App/duck'
 import { soundTypes } from '../../Sound/duck'
 import { setupTypes } from '../../Setup/duck'
-import { INITIAL_STATE } from './initalState'
+import { INITIAL_STATE } from './initialState'
 
 export const GUESS_STATES = {
   CORRECT: 'CORRECT',

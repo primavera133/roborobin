@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types'
+import Header from '../Header/Header'
 import MakeAGuessList from '../MakeAGuessList/MakeAGuessList'
 import GuessInfo from '../GuessInfo/GuessInfo'
 import Scores from '../Scores/ScoresContainer'
@@ -10,7 +11,7 @@ import './sound.css'
 const SoundComponent = ({ randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
   return (
     <div className='sound'>
-      <h2 className='h2'>Time to play!</h2>
+      <Header lvl='h2'>Time to play!</Header>
       <p>
         Robo-robin will now play a random recording of any of your selected species. Guess which one!
       </p>

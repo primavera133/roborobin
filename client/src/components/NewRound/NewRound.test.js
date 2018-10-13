@@ -12,6 +12,8 @@ it('renders without crashing', () => {
     result: GUESS_STATES.CORRECT
   }
 
-  ReactDOM.render(<NewRound lastGuess={testLastGuess} />, div)
+  const startNewRound = () => {}
+
+  ReactDOM.render(<NewRound lastGuess={testLastGuess} startNewRound={startNewRound} />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

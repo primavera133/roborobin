@@ -7,6 +7,7 @@ const getRandomSpecieData = (state) => appSelectors.getApp(state).randomSpecieDa
 const getRandomRecording = (state) => appSelectors.getApp(state).randomRecording
 
 const getGuessMeta = state => {
+  console.log('222', appSelectors.getApp(state))
   return appSelectors.getApp(state).guessMeta
 }
 
@@ -18,6 +19,7 @@ const getLastGuess = state => {
 }
 
 const getGuessState = state => {
+  console.log('getGuessState', state)
   return getGuessMeta(state).latestGuess
 }
 

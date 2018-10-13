@@ -1,6 +1,7 @@
 import React from 'react'
 import { GUESS_STATES } from '../App/duck/reducers'
 import NewRound from '../NewRound/NewRound'
+import Header from '../Header/Header'
 
 export default ({ lastGuess, randomRecording, startNewRound }) => {
   const hasResult = !!lastGuess
@@ -11,7 +12,7 @@ export default ({ lastGuess, randomRecording, startNewRound }) => {
   return (<div aria-live='polite'>
     {isCorrect &&
     <div>
-      <h4 role='status' className='h4'>That was correct!</h4>
+      <Header role='status' lvl='h4'>That was correct!</Header>
       <p>
         Recorded by: {randomRecording.rec}<br />
         Recorded at: {randomRecording.cnt}, {randomRecording.loc}<br />

@@ -1,9 +1,25 @@
-@import "./style.scss";
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.root {
+  height: 100%;
+}
+
+p {
+  margin-top: 0;
+}
+
+p.centered {
+  text-align: center;
+}
 
 body {
-  background-color: #53beac;
-  background: url('/img/kazuend-40010-unsplash_teal.jpg');
-  background-size: cover;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 2.3;
+  font-size: 16px;
 }
 
 .app {
@@ -13,7 +29,7 @@ body {
   padding: 20px;
   background: #f0eeeb;
   box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.15);
-  background-image: url("/img/roborobin.png");
+  background-image: url("./roborobin.png");
   background-size: 90px;
   background-repeat: no-repeat;
   background-position: 10px 10px;
@@ -89,23 +105,55 @@ footer {
 }
 
 @keyframes wigglePos {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(0deg); }
-  20% { transform: rotate(5deg); }
-  30% { transform: rotate(-5deg); }
-  40% { transform: rotate(0deg); }
-  50% { transform: rotate(-5deg); }
-  70% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(5deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes wiggleNeg {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(0deg); }
-  12% { transform: rotate(5deg); }
-  15% { transform: rotate(-5deg); }
-  18% { transform: rotate(5deg); }
-  20% { transform: rotate(-5deg); }
-  25% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  12% {
+    transform: rotate(5deg);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  18% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

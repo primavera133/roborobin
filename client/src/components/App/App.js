@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './normalize.css'
-import './style.css'
 import './app.css'
+import Header from '../Header/Header'
 
 import SoundContainer from '../Sound/SoundContainer'
 import SetupContainer from '../Setup/SetupContainer'
@@ -13,17 +13,17 @@ class App extends Component {
     const { showSetup, playRecording, reset } = this.props
     return (
       <div className='app'>
-        <h1 className='h1'>Robo-robin</h1>
+        <Header lvl='h1'>Robo-robin</Header>
         <p>Robo-robin knows all bird songs and can help you to learn them!</p>
         <ol className={'instructions'}>
-          <li>First make a list of species. Search any species available from <a href='https://xeno-canto.org'
+          <li>First make a list of species. Add to the list by searching any species (or group of species) available from <a href='https://xeno-canto.org'
             target='_blank'
             rel='noopener noreferrer'>Xeno-canto</a>.
-            English
-            names or scientific works.
+            Both english
+            and scientific names works.
           </li>
-          <li>Then play a random recording of any of the species from your list.</li>
-          <li>Guess which of the species was in the recording.</li>
+          <li>Robo-robin then plays a random recording of any of the species from your list.</li>
+          <li>Listen and make a guess which of the species was in the recording.</li>
         </ol>
         <main>
           {showSetup && <SetupContainer />}
