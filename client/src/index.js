@@ -1,11 +1,19 @@
 import 'babel-polyfill'
 
 import React from 'react'
+import { IntlProvider, addLocaleData } from 'react-intl'
+import svLocaleData from 'react-intl/locale-data/sv'
+import translations from './i18n/locales'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { initStore } from './store'
 
 import App from './components/App/App'
+
+addLocaleData(svLocaleData)
+
+const locale = 'sv'
+const messages = translations[locale]
 
 // import registerServiceWorker from './registerServiceWorker'
 
@@ -13,7 +21,9 @@ initStore()
   .then(store => {
     ReactDOM.render(
       <Provider store={store}>
-        <App />
+        <IntlProvider locale={locale} key={locale} messages={messages}>
+          <App />
+        </IntlProvider>
       </Provider>,
       document.getElementById('root')
     )

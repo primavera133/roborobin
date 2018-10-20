@@ -14,7 +14,7 @@ it('renders without crashing', () => {
   const validating = ''
   const lastValidated = 'corvo corax'
 
-  ReactDOM.render(<SetupComponent
+  ReactDOM.render(<SetupComponent.WrappedComponent
     addSpeciesValue={addSpeciesValue}
     species={species}
     validatingSpecies={validatingSpecies}
@@ -35,7 +35,7 @@ it('renders without crashing', () => {
   const validating = 'bubo bubo'
   const lastValidated = 'corvo corax'
 
-  ReactDOM.render(<SetupComponent
+  ReactDOM.render(<SetupComponent.WrappedComponent
     addSpeciesValue={addSpeciesValue}
     species={species}
     validatingSpecies={validatingSpecies}

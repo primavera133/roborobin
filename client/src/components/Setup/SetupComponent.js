@@ -1,8 +1,15 @@
 import React, { Component, Fragment } from 'react'
+import { injectIntl, defineMessages, FormattedMessage } from 'react-intl'
 import FontAwesome from 'react-fontawesome'
 import SpeciesList from '../SpeciesList/SpeciesList'
 import Header from '../Header/Header'
 import './setup.css'
+
+const messages = defineMessages({
+  search: {
+    id: 'setup.search'
+  }
+})
 
 class SetupComponent extends Component {
   constructor (props) {
@@ -40,14 +47,24 @@ class SetupComponent extends Component {
       validationFailed,
       validating,
       lastValidated,
-      playRecording
+      playRecording,
+      intl: { formatMessage }
     } = this.props
+
     return (
       <Fragment>
-        {!!species.length && (<Header lvl='h2'>This is your current list</Header>)}
+        {!!species.length && (<Header lvl='h2'>
+          <FormattedMessage
+            id='setup.title'
+            defaultMessage='This is your current list'
+          />
+        </Header>)}
 
         {!species.length && <Header lvl='h2'>
-          No species in your list, add at least one.
+          <FormattedMessage
+            id='setup.noSpeciesMessage'
+            defaultMessage='No species in your list, add at least one. two'
+          />
         </Header>}
 
         <SpeciesList species={species} removeSpecie={removeSpecie} />
@@ -55,7 +72,12 @@ class SetupComponent extends Component {
         <div className='setup-add'>
           <label
             htmlFor='addSpecie'
-            className='h3'>Add a bird</label>
+            className='h3'>
+            <FormattedMessage
+              id='setup.add'
+              defaultMessage='Add a bird'
+            />
+          </label>
           <input
             type='text'
             id='addSpecie'
@@ -75,26 +97,51 @@ class SetupComponent extends Component {
             title='Search and add to the list'
             className='btn-add'
           >
-            <span className='sr-only'>Search and add to the list</span>
-            <FontAwesome name='plus-circle' title='Search and add to the list' spin={validatingSpecies} />
+            <span className='sr-only'>
+              <FormattedMessage
+                id='setup.search'
+                defaultMessage='Search and add to the list'
+              />
+            </span>
+            <FontAwesome name='plus-circle' title={formatMessage(messages.search)} spin={validatingSpecies} />
           </button>
           {validatingSpecies && <p className='setup-message' aria-live='polite'>
             <FontAwesome name='search' />
-            <span className='text-icon'>Looking for recordings of {validating}</span>
+            <span className='text-icon'><FormattedMessage
+              id='setup.looking'
+              defaultMessage={`Looking for recordings of {validating}`}
+              values={{ validating: <i>{validating}</i> }}
+            /></span>
           </p>}
           {validationFailed && <p className='setup-message' aria-live='assertive'>
             <FontAwesome name='exclamation-triangle' />
-            <span className='text-icon' role='alert'>No recordings for {lastValidated}, try something else</span>
+            <span className='text-icon' role='alert'>
+              <FormattedMessage
+                id='setup.noHit'
+                defaultMessage='No recordings for {lastValidated}, try something else'
+                values={{ lastValidated: <i>{lastValidated}</i> }}
+              />
+            </span>
           </p>}
         </div>
 
         <div className='setup-play'>
-          <Header lvl='h3'>Ready?</Header>
+          <Header lvl='h3'>
+            <FormattedMessage
+              id='setup.playTitle'
+              defaultMessage='Ready?'
+            />
+          </Header>
           <button
             onClick={playRecording}
             disabled={!species.length}
           >
-            <span className='btn-text'>Start playing!</span>
+            <span className='btn-text'>
+              <FormattedMessage
+                id='setup.playBtn'
+                defaultMessage='Start playing!'
+              />
+            </span>
             <FontAwesome name='volume-up' />
           </button>
         </div>
@@ -103,4 +150,4 @@ class SetupComponent extends Component {
   }
 }
 
-export default SetupComponent
+export default injectIntl(SetupComponent)

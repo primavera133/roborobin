@@ -1,0 +1,16 @@
+{
+  "app.title": "Robo-robin",
+  "app.content1": "Robo-robin knows all bird songs and can help you to learn them!",
+  "app.content2": "First make a list of species. Add to the list by searching any species (or group of species) available from {link}. Both english and scientific names works.",
+  "app.content3": "Robo-robin then plays a random recording of any of the species from your list",
+  "app.content4": "Listen and make a guess which of the species was in the recording.",
+  "makeaguess.title": "No species in your list, add at least one.",
+  "setup.title": "This is your current list",
+  "setup.noSpeciesMessage": "No species in your list, add at least one.",
+  "setup.add": "Add a bird",
+  "setup.search": "Search and add to the list",
+  "setup.looking": "Looking for recordings of {validating}",
+  "setup.noHit": "No recordings for {lastValidated}, try something else",
+  "setup.playTitle": "Ready?",
+  "setup.playBtn": "Start playing!"
+}

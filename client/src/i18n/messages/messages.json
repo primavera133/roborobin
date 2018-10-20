@@ -1,0 +1,17 @@
+[
+  {
+    "id": "app.title",
+    "defaultMessage": "Robo-robin",
+    "filepath": "src/components/App/App.js"
+  },
+  {
+    "id": "app.content1",
+    "defaultMessage": "Robo-robin knows all bird songs and can help you to learn them!",
+    "filepath": "src/components/App/App.js"
+  },
+  {
+    "id": "app.content2",
+    "defaultMessage": "First make a list of species. Add to the list by searching any species (or group of species) available from {link}. Both english and scientific names works.",
+    "filepath": "src/components/App/App.js"
+  }
+]
