@@ -11,6 +11,6 @@ it('renders without crashing', () => {
     incorrectGuesses: 2,
     rounds: 3
   }
-  ReactDOM.render(<ScoresComponent scores={testScores} />, div)
+  ReactDOM.render(<ScoresComponent.WrappedComponent scores={testScores} />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

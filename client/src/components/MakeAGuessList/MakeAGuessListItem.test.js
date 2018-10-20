@@ -14,7 +14,7 @@ it('renders item without crashing', () => {
   const roundHasAnyGuess = false
   const makeAGuess = () => {}
 
-  ReactDOM.render(<MakeAGuessListItem
+  ReactDOM.render(<MakeAGuessListItem.WrappedComponent
     key={specie.scientificName}
     specie={specie}
     makeAGuess={makeAGuess}

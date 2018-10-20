@@ -24,7 +24,7 @@ it('renders info without crashing', () => {
 
   const startNewRound = () => {}
 
-  ReactDOM.render(<GuessInfo
+  ReactDOM.render(<GuessInfo.WrappedComponent
     lastGuess={lastGuess}
     randomRecording={randomRecording}
     startNewRound={startNewRound}

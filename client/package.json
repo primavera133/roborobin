@@ -13,6 +13,7 @@
     "react-dom": "^16.4.1",
     "react-fontawesome": "^1.6.1",
     "react-grid-system": "^4.3.1",
+    "react-intl": "^2.7.1",
     "react-player": "^1.6.4",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
@@ -30,6 +31,8 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "loki": "^0.13.0",
+    "react-intl-cra": "^0.3.3",
+    "react-intl-translations-manager": "^5.0.3",
     "react-test-renderer": "^16.5.2",
     "redux-test-utils": "^0.3.0"
   },
@@ -44,7 +47,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "loki-update": "yarn loki update",
-    "loki-test": "yarn loki test"
+    "loki-test": "yarn loki test",
+    "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/i18n/messages/messages.json'",
+    "manage:translations": "node ./translationRunner.js"
   },
   "proxy": "http://localhost:3000",
   "loki": {

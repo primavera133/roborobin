@@ -1,12 +1,16 @@
 import React from 'react'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import MakeAGuessListItem from './MakeAGuessListItem'
 import './makeAGuessList.css'
 
-export default ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
+const MakeAGuess = ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
   return (
     <ul className='make-a-guess-list'>
       {!species.length && <li>
-        No species in your list, add at least one.
+        <FormattedMessage
+          id='makeaguess.title'
+          defaultMessage='No species in your list, add at least one. two'
+        />
       </li>}
       {makeAGuess && species.map(specie => (
         <MakeAGuessListItem
@@ -21,3 +25,5 @@ export default ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
 
   )
 }
+
+export default injectIntl(MakeAGuess)

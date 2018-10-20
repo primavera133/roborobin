@@ -28,7 +28,7 @@ it('renders without crashing', () => {
   const startNewRound = () => {}
 
   ReactDOM.render(<Provider store={testStore}>
-    <SoundComponent
+    <SoundComponent.WrappedComponent
       randomRecording={randomRecording}
       url={url}
       species={species}

@@ -1,15 +1,36 @@
 import React from 'react'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import './scores.css'
 
-export default ({ scores }) => {
+export default injectIntl(({ scores }) => {
   return (<div className='scoreboard'>
     <table>
-      <caption className='h3'>Your scores</caption>
+      <caption className='h3'>
+        <FormattedMessage
+          id='scores.title'
+          defaultMessage='Your scores'
+        />
+      </caption>
       <thead>
         <tr>
-          <th scope='col'>correct</th>
-          <th scope='col'>incorrect</th>
-          <th scope='col'>rounds</th>
+          <th scope='col'>
+            <FormattedMessage
+              id='scores.correct'
+              defaultMessage='correct'
+            />
+          </th>
+          <th scope='col'>
+            <FormattedMessage
+              id='scores.incorrect'
+              defaultMessage='incorrect'
+            />
+          </th>
+          <th scope='col'>
+            <FormattedMessage
+              id='scores.rounds'
+              defaultMessage='rounds'
+            />
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -22,4 +43,4 @@ export default ({ scores }) => {
       </tbody>
     </table>
   </div>)
-}
+})

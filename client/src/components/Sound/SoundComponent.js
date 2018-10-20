@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import PropTypes from 'prop-types'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import Header from '../Header/Header'
 import MakeAGuessList from '../MakeAGuessList/MakeAGuessList'
 import GuessInfo from '../GuessInfo/GuessInfo'
@@ -11,9 +12,17 @@ import './sound.css'
 const SoundComponent = ({ randomRecording, url, species, editList, makeAGuess, lastGuess, roundHasAnyGuess, startNewRound }) => {
   return (
     <div className='sound'>
-      <Header lvl='h2'>Time to play!</Header>
+      <Header lvl='h2'>
+        <FormattedMessage
+          id='sound.title'
+          defaultMessage='Time to play!'
+        />
+      </Header>
       <p>
-        Robo-robin will now play a random recording of any of your selected species. Guess which one!
+        <FormattedMessage
+          id='sound.intro'
+          defaultMessage='Robo-robin will now play a random recording of any of your selected species. Guess which one!'
+        />
       </p>
 
       {url && (<ReactPlayer
@@ -34,7 +43,12 @@ const SoundComponent = ({ randomRecording, url, species, editList, makeAGuess, l
 
       <p className='centered'>
         <button onClick={editList}>
-          <span className='btn-text'>Change the list </span>
+          <span className='btn-text'>
+            <FormattedMessage
+              id='sound.change'
+              defaultMessage='Change the list'
+            />
+          </span>
           <FontAwesome name='user-edit' />
         </button>
       </p>
@@ -47,4 +61,4 @@ SoundComponent.propTypes = {
   url: PropTypes.string
 }
 
-export default SoundComponent
+export default injectIntl(SoundComponent)

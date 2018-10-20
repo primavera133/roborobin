@@ -1,9 +1,10 @@
 import React from 'react'
+import { injectIntl, FormattedMessage } from 'react-intl'
 import { GUESS_STATES } from '../App/duck/reducers'
 import NewRound from '../NewRound/NewRound'
 import Header from '../Header/Header'
 
-export default ({ lastGuess, randomRecording, startNewRound }) => {
+export default injectIntl(({ lastGuess, randomRecording, startNewRound }) => {
   const hasResult = !!lastGuess
   const result = hasResult && lastGuess.result
   const isCorrect = hasResult && result === GUESS_STATES.CORRECT
@@ -12,11 +13,30 @@ export default ({ lastGuess, randomRecording, startNewRound }) => {
   return (<div aria-live='polite'>
     {isCorrect &&
     <div>
-      <Header role='status' lvl='h4'>That was correct!</Header>
+      <Header role='status' lvl='h4'>
+        <FormattedMessage
+          id='guessInfo.correct'
+          defaultMessage='That was correct!'
+        />
+      </Header>
       <p>
-        Recorded by: {randomRecording.rec}<br />
-        Recorded at: {randomRecording.cnt}, {randomRecording.loc}<br />
-        more info: <a href={randomRecording.url} target='_blank'>{randomRecording.url}</a>
+        <FormattedMessage
+          id='guessInfo.recordedBy'
+          defaultMessage='Recorded by: {rec}'
+          values={{ rec: <span>{randomRecording.rec}</span> }}
+        />
+        <br />
+        <FormattedMessage
+          id='guessInfo.recordedAt'
+          defaultMessage='Recorded at: {cnt}, {loc}'
+          values={{ cnt: <span>{randomRecording.cnt}</span>, loc: <span>{randomRecording.loc}</span> }}
+        />
+        <br />
+        <FormattedMessage
+          id='guessInfo.recordedUrl'
+          defaultMessage='more info: '
+        />
+        <a href={randomRecording.url} target='_blank'>{randomRecording.url}</a>
       </p>
 
       <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
@@ -25,4 +45,4 @@ export default ({ lastGuess, randomRecording, startNewRound }) => {
 
     {isIncorrect && <p role='status'>Sorry, that was an incorrect guess</p>}
   </div>)
-}
+})
