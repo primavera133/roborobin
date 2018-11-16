@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { injectIntl, defineMessages, FormattedMessage } from 'react-intl'
 import FontAwesome from 'react-fontawesome'
 import SpeciesList from '../SpeciesList/SpeciesList'
-import Header from '../Header/Header'
 import './setup.css'
 
 const messages = defineMessages({
@@ -56,30 +55,18 @@ class SetupComponent extends Component {
 
     return (
       <Fragment>
-        {!!species.length && (<Header lvl='h2'>
-          <FormattedMessage
-            id='setup.title'
-            defaultMessage='This is your current list'
-          />
-        </Header>)}
-
-        {!species.length && <Header lvl='h2'>
-          <FormattedMessage
-            id='setup.noSpeciesMessage'
-            defaultMessage='No species in your list, add at least one. two'
-          />
-        </Header>}
-
-        <SpeciesList species={species} removeSpecie={removeSpecie} />
-
         <div className='setup-add'>
           <label
             htmlFor='addSpecie'
             className='h3'>
-            <FormattedMessage
-              id='setup.add'
+            {!species.length && <FormattedMessage
+              id='setup.add0'
+              defaultMessage='Start by adding a bird'
+            />}
+            {!!species.length && <FormattedMessage
+              id='setup.add1'
               defaultMessage='Add a bird'
-            />
+            />}
           </label>
           <input
             type='text'
@@ -128,26 +115,8 @@ class SetupComponent extends Component {
           </p>}
         </div>
 
-        <div className='setup-play'>
-          <Header lvl='h3'>
-            <FormattedMessage
-              id='setup.playTitle'
-              defaultMessage='Ready?'
-            />
-          </Header>
-          <button
-            onClick={playRecording}
-            disabled={!species.length}
-          >
-            <span className='btn-text'>
-              <FormattedMessage
-                id='setup.playBtn'
-                defaultMessage='Start playing!'
-              />
-            </span>
-            <FontAwesome name='volume-up' />
-          </button>
-        </div>
+        <SpeciesList species={species} removeSpecie={removeSpecie} playRecording={playRecording} />
+
       </Fragment>
     )
   }

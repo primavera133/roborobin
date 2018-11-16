@@ -1,11 +1,16 @@
 .species-list--wrapper {
   text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+  }
 }
 
 .species-list {
   display: inline-block;
   text-align: left;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
   padding: 0;
 
   li {

@@ -30,6 +30,11 @@
     width: calc(100% - 70px);
   }
 
+  input[disabled] {
+    background: #ddd;
+    border: solid 4px white;
+  }
+
   .btn-add {
     vertical-align: middle;
     padding: 8px;

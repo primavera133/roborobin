@@ -8,7 +8,6 @@ export default injectIntl(({ lastGuess, randomRecording, startNewRound }) => {
   const hasResult = !!lastGuess
   const result = hasResult && lastGuess.result
   const isCorrect = hasResult && result === GUESS_STATES.CORRECT
-  const isIncorrect = hasResult && result === GUESS_STATES.INCORRECT
   // console.log(randomRecording)
   return (<div aria-live='polite'>
     {isCorrect &&
@@ -42,7 +41,5 @@ export default injectIntl(({ lastGuess, randomRecording, startNewRound }) => {
       <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />
     </div>
     }
-
-    {isIncorrect && <p role='status'>Sorry, that was an incorrect guess</p>}
   </div>)
 })

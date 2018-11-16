@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
 import { GUESS_STATES } from '../App/duck/reducers'
 import FontAwesome from 'react-fontawesome'
+import './newRound.css'
 
 export default injectIntl(({ lastGuess, startNewRound }) => {
   const hasResult = !!lastGuess
@@ -10,7 +11,7 @@ export default injectIntl(({ lastGuess, startNewRound }) => {
 
   return (<Fragment>
     {isCorrect &&
-    <div>
+    <div className='btn-newRound'>
       <button
         onClick={startNewRound}
       >

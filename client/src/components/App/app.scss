@@ -67,6 +67,11 @@ button {
     color: black;
   }
 
+  &.btn-small {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
   .btn-text {
     margin-right: 10px;
   }

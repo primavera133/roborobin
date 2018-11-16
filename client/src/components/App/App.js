@@ -21,6 +21,13 @@ class App extends Component {
             defaultMessage='Robo-robin'
           />
         </Header>
+        <span className='app-subtitle'>
+          <FormattedMessage
+            id='app.subtitle'
+            defaultMessage='all them bird songs'
+          />
+        </span>
+
         <p>
           <FormattedMessage
             id='app.content1'
@@ -55,7 +62,8 @@ class App extends Component {
           {playRecording && <SoundContainer />}
         </main>
         <footer>
-          <button onClick={reset}>
+          <hr />
+          <button onClick={reset} className='btn-small'>
             <FormattedMessage
               id='setup.restart'
               defaultMessage='Restart app'
