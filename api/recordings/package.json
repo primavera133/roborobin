@@ -1,0 +1,11 @@
+{
+  "name": "sounds",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jonas Myrenås",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "memory-cache": "^0.2.0"
+  }
+}

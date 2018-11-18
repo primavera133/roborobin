@@ -17,7 +17,6 @@
     "react-player": "^1.6.4",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
-    "recharts": "^1.0.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "reduxsauce": "^1.0.0",
@@ -52,7 +51,7 @@
     "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/i18n/messages/messages.json'",
     "manage:translations": "node ./translationRunner.js"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3001",
   "loki": {
     "configurations": {
       "chrome.laptop": {

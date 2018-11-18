@@ -1,7 +1,12 @@
 ### Project specific
 client/build/*
-public/*
-.env
+static/
+img/*
+asset-manifest.json
+favicon.ico
+index.html
+manifest.json
+service-worker.js
 
 # Created by https://www.gitignore.io/api/web,node,linux,macos,windows
 

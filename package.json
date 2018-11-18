@@ -3,30 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon --watch helpers --watch routes --watch views ./bin/www",
-    "move-build": "cp -R ./client/build/. ./public",
+    "start-dev-server": "PORT=3001 nodemon --watch api dev/index.js",
+    "start-dev-client": "cd client && yarn dev",
+    "dev": "yarn start-dev-server & yarn start-dev-client",
+    "move-build": "cp -R ./client/build/. ./",
     "build-client": "cd ./client && yarn run build && cd ..",
-    "install-client": "cd ./client && yarn install && cd ..",
-    "build": "yarn run install-client && yarn run build-client && yarn run move-build",
-    "bild-now": "yarn run build && yarn run start",
-    "docker-build": "docker build -t robo-robin .",
-    "docker-run": "docker run --rm -p 80:3000 --name robin_one robo-robin",
-    "docker-stop": "docker stop robin_one",
-    "docker-prune": "docker system prune"
+    "build": "yarn run build-client && yarn run move-build"
   },
-  "dependencies": {
-    "date-fns": "^1.29.0",
-    "debug": "~2.6.9",
-    "dotenv": "^6.0.0",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "isomorphic-fetch": "^2.2.1",
-    "jade": "~1.11.0",
-    "memory-cache": "^0.2.0",
-    "morgan": "~1.9.0",
-    "nodemon": "^1.18.4",
-    "standard": "^12.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "standard": {
     "env": [

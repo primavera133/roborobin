@@ -1,5 +1,25 @@
 {
+  "version": 2,
   "name": "roborobin",
-  "type": "docker",
-  "alias": ["beta.roborobin.net"]
+  "alias": [
+    "beta.roborobin.net"
+  ],
+  "builds": [
+    {
+      "src": "/index.html",
+      "use": "@now/static"
+    },
+    {
+      "src": "/static/**/*.*",
+      "use": "@now/static"
+    },
+    {
+      "src": "/img/**/*.*",
+      "use": "@now/static"
+    },
+    {
+      "src": "/api/recordings/index.js",
+      "use": "@now/node"
+    }
+  ]
 }

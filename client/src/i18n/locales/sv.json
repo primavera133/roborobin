@@ -1,7 +1,7 @@
 {
   "app.title": "Robo-robin",
-  "app.subtitle": "kan alla läten",
-  "app.content1": "Robo-robin kan alla fågelläten och kan hjälpa dig lära dig dem!!",
+  "app.subtitle": "hjälper dig med fågelläten",
+  "app.content1": "Robo-robin kan alla fågelläten och kan hjälpa dig lära dig dem!!!",
   "app.content2": "Först gör du en lista med de arter som du vill lära dig. Du kan lägga till arter genom att söka på allt som är sökbart på {link}. Både engelska och vetenskapliga namn fungerar att söka på. (Tyvärr funkar inte svenska namn ännu, men det är på gång)",
   "app.content3": "Robo-robin spelar sedan en slumpvist vald inspelning av någon av arterna från din lista.",
   "app.content4": "Lyssna och gissa vilken art som spelas upp",

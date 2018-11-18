@@ -9,7 +9,7 @@ const addSpecie = () => {
 
       dispatch(setupCreators.addSpecie(addSpeciesValue))
       const key = encodeURIComponent(addSpeciesValue)
-      const result = await fetch(`/api/recordings/${key}`)
+      const result = await fetch(`/api/recordings?searchQuery=${key}`)
       const json = await result.json()
       if (json.numRecordings && json.numRecordings > 0) {
         dispatch(setupCreators.addSpecieSuccess(key, json))
