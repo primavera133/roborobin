@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start-dev-server": "PORT=3001 nodemon --watch api dev/index.js",
+    "start-dev-server": "PORT=3001 nodemon dev/index.js",
     "start-dev-client": "cd client && yarn dev",
     "dev": "yarn start-dev-server & yarn start-dev-client",
     "move-build": "cp -R ./client/build/. ./",

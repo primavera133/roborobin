@@ -1,5 +1,6 @@
 const healthCheckApi = require('../api/healthcheck')
 const recordingsApi = require('../api/recordings')
+const translateApi = require('../api/translate')
 const dotenv = require('dotenv')
 dotenv.load()
 
@@ -9,6 +10,7 @@ const express = require('express')
 const apiRouter = express.Router()
 apiRouter.get('/healthcheck', healthCheckApi)
 apiRouter.get('/recordings', recordingsApi)
+apiRouter.get('/translate', translateApi)
 
 const app = express()
 
