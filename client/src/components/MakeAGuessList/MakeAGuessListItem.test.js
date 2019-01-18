@@ -15,7 +15,7 @@ it('renders item without crashing', () => {
   const makeAGuess = () => {}
 
   ReactDOM.render(<MakeAGuessListItem.WrappedComponent
-    key={specie.scientificName}
+    key={specie.sc}
     specie={specie}
     makeAGuess={makeAGuess}
     lastGuess={lastGuess}

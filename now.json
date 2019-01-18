@@ -20,6 +20,10 @@
     {
       "src": "/api/recordings/index.js",
       "use": "@now/node"
+    },
+    {
+      "src": "/api/translate/index.js",
+      "use": "@now/node"
     }
   ]
 }

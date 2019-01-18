@@ -8,12 +8,12 @@ it('renders item without crashing', () => {
   const div = document.createElement('div')
 
   const specie = {
-    scientificName: 'bubo bubo'
+    sc: 'bubo bubo'
   }
   const removeSpecie = () => {}
 
   ReactDOM.render(<SpecieListItem
-    key={specie.scientificName}
+    key={specie.sc}
     specie={specie}
     removeSpecie={removeSpecie}
   />

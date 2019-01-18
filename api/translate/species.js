@@ -7,7 +7,7 @@ module.exports = [
   {
     sc: 'Cygnus columbianus',
     en: 'Tundra swan',
-    sv: 'Mindresångsvan'
+    sv: 'Mindre sångsvan'
   },
   {
     sc: 'Cygnus cygnus',

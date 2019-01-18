@@ -42,26 +42,23 @@ const addSpecieFail = (state, action) => {
 }
 
 const addSpecieSuccess = (state, action) => {
-  const newSpecie = {
-    scientificName: decodeURIComponent(action.key)
-  }
   return {
     ...state,
     validating: '',
     isValidationFailed: false,
     isValidatingSpecies: false,
     addSpeciesInputValue: '',
-    species: state.species.concat(newSpecie),
+    species: state.species.concat(action.obj),
     recordings: {
       ...state.recordings,
-      [action.key]: action.value
+      [action.sc]: action.value
     }
   }
 }
 
 const removeSpecie = (state, action) => {
   const species = state.species.filter(specie => {
-    return specie.scientificName !== action.value.scientificName
+    return specie.sc !== action.value.sc
   })
   return {
     ...state,

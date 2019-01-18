@@ -15,7 +15,7 @@ export default class MakeAGuessListItem extends Component {
 
   render () {
     const { specie, lastGuess, roundHasAnyGuess } = this.props
-    const hasResult = roundHasAnyGuess && lastGuess && lastGuess.specie.scientificName === specie.scientificName
+    const hasResult = roundHasAnyGuess && lastGuess && lastGuess.specie.sc === specie.sc
     const result = hasResult && lastGuess.result
     const isCorrect = hasResult && result === GUESS_STATES.CORRECT
     const isIncorrect = hasResult && result === GUESS_STATES.INCORRECT
@@ -30,7 +30,7 @@ export default class MakeAGuessListItem extends Component {
           onClick={this.handleClick}
           className={`${isCorrect ? 'btn-success' : ''} ${isIncorrect ? 'btn-wrong' : ''}`}
         >
-          <span className='btn-text'>{specie.scientificName}</span>
+          <span className='btn-text'>{specie.sc}</span>
           {isIncorrect && (<span className='btn-icon btn-icon--incorrect'><FontAwesome name='thumbs-down' /></span>)}
           {isCorrect && (<span className='btn-icon btn-icon--correct'><FontAwesome name='thumbs-up' /></span>)}
         </button>

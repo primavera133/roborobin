@@ -8,7 +8,7 @@ const MakeAGuess = ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
     species.length && (<ul className='make-a-guess-list'>
       {makeAGuess && species.map(specie => (
         <MakeAGuessListItem
-          key={specie.scientificName}
+          key={specie.sc}
           specie={specie}
           makeAGuess={makeAGuess}
           lastGuess={lastGuess}

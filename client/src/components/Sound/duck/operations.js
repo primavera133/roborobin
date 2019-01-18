@@ -11,7 +11,7 @@ const selectRandomSpecie = () => {
       dispatch(soundCreators.setRandomSpecieData(specie))
 
       const recordings = soundSelectors.getRecordings(state)
-      const key = encodeURIComponent(specie.scientificName)
+      const key = encodeURIComponent(specie.sc)
 
       let foundARecording = false
       while (!foundARecording) {
@@ -34,7 +34,7 @@ const makeAGuess = specie => {
   return (dispatch, getState) => {
     const state = getState()
     const randomSpecieData = soundSelectors.getRandomSpecieData(state)
-    const isCorrectGuess = specie.scientificName === randomSpecieData.scientificName
+    const isCorrectGuess = specie.sc === randomSpecieData.sc
 
     if (isCorrectGuess) {
       dispatch(soundCreators.guessSuccess(specie))

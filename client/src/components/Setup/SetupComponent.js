@@ -50,7 +50,7 @@ class SetupComponent extends Component {
       validating,
       lastValidated,
       playRecording,
-      intl: { formatMessage }
+      intl: { formatMessage, locale }
     } = this.props
 
     return (
@@ -115,7 +115,7 @@ class SetupComponent extends Component {
           </p>}
         </div>
 
-        <SpeciesList species={species} removeSpecie={removeSpecie} playRecording={playRecording} />
+        <SpeciesList species={species} removeSpecie={removeSpecie} playRecording={playRecording} locale={locale} />
 
       </Fragment>
     )
