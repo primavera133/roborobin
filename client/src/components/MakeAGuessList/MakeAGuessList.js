@@ -3,7 +3,7 @@ import { injectIntl } from 'react-intl'
 import MakeAGuessListItem from './MakeAGuessListItem'
 import './makeAGuessList.css'
 
-const MakeAGuess = ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
+const MakeAGuess = ({ species, makeAGuess, ...rest }) => {
   return (
     species.length && (<ul className='make-a-guess-list'>
       {makeAGuess && species.map(specie => (
@@ -11,8 +11,7 @@ const MakeAGuess = ({ species, makeAGuess, lastGuess, roundHasAnyGuess }) => {
           key={specie.sc}
           specie={specie}
           makeAGuess={makeAGuess}
-          lastGuess={lastGuess}
-          roundHasAnyGuess={roundHasAnyGuess}
+          {...rest}
         />
       ))}
     </ul>)

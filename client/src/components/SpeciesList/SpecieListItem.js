@@ -26,7 +26,6 @@ export default class SpecieItem extends Component {
           </span>
           <FontAwesome name='times-circle' />
         </button>
-
         {specie[locale]}
       </li>
     )
