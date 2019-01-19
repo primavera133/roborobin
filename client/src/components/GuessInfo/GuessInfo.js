@@ -8,7 +8,7 @@ export default injectIntl(({ lastGuess, randomRecording, startNewRound }) => {
   const hasResult = !!lastGuess
   const result = hasResult && lastGuess.result
   const isCorrect = hasResult && result === GUESS_STATES.CORRECT
-  // console.log(randomRecording)
+
   return (<div aria-live='polite'>
     {isCorrect &&
     <div>
@@ -35,7 +35,7 @@ export default injectIntl(({ lastGuess, randomRecording, startNewRound }) => {
           id='guessInfo.recordedUrl'
           defaultMessage='more info: '
         />
-        <a href={randomRecording.url} target='_blank'>{randomRecording.url}</a>
+        <a href={randomRecording.url} target='_blank' rel='noopener noreferrer'>{randomRecording.url}</a>
       </p>
 
       <NewRound lastGuess={lastGuess} startNewRound={startNewRound} />

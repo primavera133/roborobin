@@ -6,7 +6,7 @@
     "babel-polyfill": "^6.26.0",
     "localforage": "^1.7.2",
     "lodash.throttle": "^4.1.1",
-    "node-sass-chokidar": "^1.3.3",
+    "node-sass-chokidar": "^1.3.4",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-bootstrap": "^0.32.1",
@@ -16,7 +16,7 @@
     "react-intl": "^2.7.1",
     "react-player": "^1.6.4",
     "react-redux": "^5.0.7",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.3",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "reduxsauce": "^1.0.0",
@@ -29,7 +29,7 @@
     "babel-core": "^6.26.3",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "loki": "^0.13.0",
+    "loki": "^0.14.2",
     "react-intl-cra": "^0.3.3",
     "react-intl-translations-manager": "^5.0.3",
     "react-test-renderer": "^16.5.2",
@@ -40,14 +40,14 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "dev": "yarn run watch-css & yarn run start-js",
+    "dev": "npm run watch-css & npm run start-js",
     "build-js": "react-scripts build",
-    "build": "yarn run build-css && yarn run build-js",
+    "build": "npm run build-css && npm run build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "loki-update": "yarn loki update",
-    "loki-test": "yarn loki test",
+    "loki-update": "npm run loki update",
+    "loki-test": "npm run loki test",
     "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/i18n/messages/messages.json'",
     "manage:translations": "node ./translationRunner.js"
   },
@@ -67,5 +67,11 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

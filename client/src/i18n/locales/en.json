@@ -19,6 +19,7 @@
   "sound.title": "Time to play!",
   "sound.intro": "Robo-robin will now play a random recording of any of your selected species. Guess which one!",
   "sound.change": "Change the list",
+  "specie.remove": "Remove from list",
   "guessInfo.correct": "That was correct!",
   "guessInfo.recordedBy": "Recorded by: {rec}",
   "guessInfo.recordedAt": "Recorded at: {cnt}, {loc}",
@@ -27,5 +28,5 @@
   "scores.correct": "correct",
   "scores.incorrect": "incorrect",
   "scores.rounds": "rounds",
-  "newRound.btn":"Play next recording"
+  "newRound.btn": "Play next recording"
 }

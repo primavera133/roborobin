@@ -22,7 +22,7 @@ const mapStateToProps = state => {
   const lastGuess = soundSelectors.getLastGuess(state)
   const lastRoundHasSuccess = soundSelectors.getLastRoundHasSuccess(state)
   const roundHasAnyGuess = soundSelectors.getRoundHasAnyGuess(state)
-  return {
+  const x = {
     species,
     randomRecording,
     url,
@@ -31,6 +31,7 @@ const mapStateToProps = state => {
     lastRoundHasSuccess,
     roundHasAnyGuess
   }
+  return x
 }
 
 const mapDispatchToProps = dispatch => {

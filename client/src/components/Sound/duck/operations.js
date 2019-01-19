@@ -11,11 +11,11 @@ const selectRandomSpecie = () => {
       dispatch(soundCreators.setRandomSpecieData(specie))
 
       const recordings = soundSelectors.getRecordings(state)
-      const key = encodeURIComponent(specie.sc)
+      const key = specie.sc
 
-      let foundARecording = false
-      while (!foundARecording) {
-        if (key && recordings[key]) {
+      if (key && recordings[key]) {
+        let foundARecording = false
+        while (!foundARecording) {
           const numRecordings = parseInt(recordings[key].numRecordings, 10)
           const ceiling = numRecordings > 500 ? 500 : numRecordings
           const randomRecordinIndex = Math.floor(Math.random() * ceiling)

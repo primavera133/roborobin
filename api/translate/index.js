@@ -20,7 +20,8 @@ module.exports = async (req, res) => {
 
     const translated = translator.translate(corrected[input], 'sv')
     if (!translated) {
-      res.status(422).end(JSON.stringify({ err: 'No translation found' }))
+      res.writeHead(422, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ err: 'No translation found' }))
     }
 
     res.end(JSON.stringify(translated))

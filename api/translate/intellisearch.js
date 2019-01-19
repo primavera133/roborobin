@@ -112,7 +112,7 @@ const norvigSpellChecker = () => {
   // Corrects if search phrase can be related to any known word in dictionary
   const correct = function (...args) {
     let corrections = {}
-console.log(666, args)
+
     for (let i = 0; i < args.length; i++) {
       let word = args[i]
       let candidates = known([word], edits1([word]), edits2([word]))

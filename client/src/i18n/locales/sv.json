@@ -19,6 +19,7 @@
   "sound.title": "Dags att spela!",
   "sound.intro": "Robo-robin spelar nu upp en slumpvis vald inspelning av någon art från din lista. Gissa vilken!",
   "sound.change": "Ändra i listan",
+  "specie.remove": "Ta bort från listan",
   "guessInfo.correct": "Rätt gissat!",
   "guessInfo.recordedBy": "Inspelat av: {rec}",
   "guessInfo.recordedAt": "Plats för inspelning: {cnt}, {loc}",

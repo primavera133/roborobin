@@ -3,15 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start-dev-server": "PORT=3001 nodemon dev/index.js",
-    "start-dev-client": "cd client && yarn dev",
-    "dev": "yarn start-dev-server & yarn start-dev-client",
+    "start-dev-server": "PORT=3001 npx nodemon dev/index.js",
+    "start-dev-client": "cd client && npm run dev",
+    "dev": "npm run start-dev-server & npm run start-dev-client",
+    "build-client": "cd ./client && npm run build",
     "move-build": "cp -R ./client/build/. ./",
-    "build-client": "cd ./client && yarn run build && cd ..",
-    "build": "yarn run build-client && yarn run move-build"
+    "build": "npm run build-client && npm run move-build"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9",
+    "standard": "^12.0.1"
+  },
   "standard": {
     "env": [
       "jest"
