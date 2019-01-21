@@ -24,10 +24,10 @@
     border-color: transparent;
     border-width: 4px;
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .3);
-    margin: 0 10px 0 0;
+    margin: 1rem 0;
     font-size: 1rem;
     vertical-align: middle;
-    width: calc(100% - 70px);
+    width: 100%;
   }
 
   input[disabled] {
@@ -35,19 +35,24 @@
     border: solid 4px white;
   }
 
-  .btn-add {
-    vertical-align: middle;
-    padding: 8px;
-    margin: 0;
-    background: transparent;
-    border: 0;
-    color: $teal;
-    font-size: 2.4rem;
-    box-shadow: none;
-  }
-
   .setup-message {
     margin: 0;
+  }
+
+  .setup-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .setup-flex {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    input {
+      width: calc(100% - 180px)
+    }
   }
 
 }
@@ -58,7 +63,6 @@
     margin: 0 10px 0 0;
   }
 }
-
 
 .text-icon {
   padding-left: 10px;

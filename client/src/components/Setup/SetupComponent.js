@@ -61,40 +61,40 @@ class SetupComponent extends Component {
             className='h3'>
             {!species.length && <FormattedMessage
               id='setup.add0'
-              defaultMessage='Start by adding a bird'
+              defaultMessage='Which specie do you want to start your list with?'
             />}
             {!!species.length && <FormattedMessage
               id='setup.add1'
-              defaultMessage='Add a bird'
+              defaultMessage='Do you want to add any more?'
             />}
           </label>
-          <input
-            type='text'
-            id='addSpecie'
-            name='addSpecie'
-            maxLength='100'
-            placeholder={formatMessage(messages.searchPlaceholder)}
-            value={addSpeciesValue}
-            disabled={validatingSpecies}
-            onChange={this.handleOnChange}
-            onKeyUp={this.handleKeyUp}
-            ref={this.inputRef}
-            aria-invalid={validationFailed}
-          />
-          <button
-            onClick={this.handleAddSpecie}
-            disabled={validatingSpecies}
-            title='Search and add to the list'
-            className='btn-add'
-          >
-            <span className='sr-only'>
+          <div className='setup-flex'>
+            <input
+              type='text'
+              id='addSpecie'
+              name='addSpecie'
+              maxLength='100'
+              placeholder={formatMessage(messages.searchPlaceholder)}
+              value={addSpeciesValue}
+              disabled={validatingSpecies}
+              onChange={this.handleOnChange}
+              onKeyUp={this.handleKeyUp}
+              ref={this.inputRef}
+              aria-invalid={validationFailed}
+            />
+            <button
+              onClick={this.handleAddSpecie}
+              disabled={validatingSpecies}
+              title='Search and add to the list'
+              className='btn-small'
+            >
               <FormattedMessage
                 id='setup.search'
                 defaultMessage='Search and add to the list'
               />
-            </span>
-            <FontAwesome name='plus-circle' title={formatMessage(messages.search)} spin={validatingSpecies} />
-          </button>
+            </button>
+          </div>
+
           {validatingSpecies && <p className='setup-message' aria-live='polite'>
             <FontAwesome name='search' />
             <span className='text-icon'><FormattedMessage

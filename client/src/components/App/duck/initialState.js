@@ -1,4 +1,6 @@
 export const INITIAL_STATE = {
+  lang: 'en',
+  showReadMore: false,
   showSetup: true,
   playRecording: false,
   species: [],

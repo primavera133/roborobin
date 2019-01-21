@@ -10,8 +10,15 @@ export const GUESS_STATES = {
   THINKING: 'THINKING'
 }
 
+const toggleShowReadMore = (state) => {
+  return {
+    ...state,
+    showReadMore: !state.showReadMore
+  }
+}
+
 const resetApp = (state, action) => {
-  return {...INITIAL_STATE}
+  return { ...INITIAL_STATE }
 }
 
 const setAddSpeciesInputValue = (state, action) => {
@@ -184,6 +191,7 @@ const resetGuess = (state, action) => {
 }
 
 const handlers = {
+  [appTypes.TOGGLE_SHOW_READ_MORE]: toggleShowReadMore,
   [appTypes.RESET_APP]: resetApp,
   [setupTypes.SET_ADD_SPECIES_INPUT_VALUE]: setAddSpeciesInputValue,
   [setupTypes.ADD_SPECIE]: addSpecie,
