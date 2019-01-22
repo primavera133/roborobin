@@ -3,10 +3,12 @@ const Translator = require('./Translator')
 
 const { parse } = require('url')
 
-const dictionary = require('./dictionary.json')
+const species = require('./species')
+const dictionary = species.map(specie => {
+  return specie.sv.toLowerCase()
+})
 const corrector = new Corrector(dictionary)
 
-const species = require('./species')
 const translator = new Translator(species)
 
 module.exports = async (req, res) => {
