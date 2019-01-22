@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
       let response = await fetch(url, options)
       let responseJson = await response.json()
       const body = JSON.stringify(responseJson)
-      console.log('caching', key, body)
+      console.log('caching', key)
       mcache.put(key, body, cacheDuration)
 
       res.end(body)
