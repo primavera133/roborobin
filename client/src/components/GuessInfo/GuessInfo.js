@@ -1,23 +1,12 @@
 import React from 'react'
 import { injectIntl, FormattedMessage } from 'react-intl'
-import { GUESS_STATES } from '../App/duck/reducers'
 import NewRound from '../NewRound/NewRound'
-import Header from '../Header/Header'
 
-export default injectIntl(({ lastGuess, randomRecording, startNewRound }) => {
-  const hasResult = !!lastGuess
-  const result = hasResult && lastGuess.result
-  const isCorrect = hasResult && result === GUESS_STATES.CORRECT
+export default injectIntl(({ lastGuess, randomRecording, startNewRound, isCorrect }) => {
 
   return (<div aria-live='polite'>
     {isCorrect &&
     <div>
-      <Header role='status' lvl='h4'>
-        <FormattedMessage
-          id='guessInfo.correct'
-          defaultMessage='That was correct!'
-        />
-      </Header>
       <p>
         <FormattedMessage
           id='guessInfo.recordedBy'
